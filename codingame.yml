@@ -14,3 +14,9 @@ plan:
     statement: markdowns/groups.md
   - title: "Next Steps"
     statement: markdowns/more.md
+projects:
+    regexcourse:
+        root: /projects/regexcourse
+        runner:
+            name: codingame/dotnet-runner
+            version: 1.1.0-dotnet-1.1-sdk-msbuild
