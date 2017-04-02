@@ -10,9 +10,4 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="Exercises\Exercise1.cs" />
-    <Compile Include="Validator.cs" />
-  </ItemGroup>
-
 </Project>
