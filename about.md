@@ -1,12 +1,16 @@
 # About Regular Expressions Basics
-This course is aimed as a fast, introductory course to Regular Expressions. Regular Expressions (aka Regex) are a powerful tool to make very complex text searches with just a few lines.
+This course is aimed as a fast, introductory course to Regular Expressions.
 
-## Requirements
-### Previous Knowledge:
-Generic programming knowledge: Strings, Arrays, Loops, Funtions.
-### Difficulty Level: 
+Regular Expressions (aka Regex) is a powerful tool to make very complex text searches with just a few lines of code.
+
+## Previous Knowledge:
+Basic programming knowledge: Strings, Variables, Arrays, Loops, Functions.
+
+Regex searches can be used in almost any programming language.
+
+## Difficulty Level: 
 Intermediate.
-### Estimated Time:
+## Estimated Time:
 40 minutes.
 
 ## What will I learn?
