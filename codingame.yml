@@ -1,6 +1,16 @@
-title : Content name
+title : Regular Expressions Basics
 plan:
-  - title: Part 1
-    statement: markdowns/part1.md
-  - title: Part 2
-    statement: markdowns/part2.md
+  - title: Introduction
+    statement: markdowns/intro.md
+  - title: "Reserved Characters"
+    statement: markdowns/reserved.md
+  - title: "Character Sets"
+    statement: markdowns/sets.md
+  - title: Repetitions
+    statement: markdowns/repetitions.md
+  - title: Alternations
+    statement: markdowns/alternations.md
+  - title: "Groups & Capturing Groups"
+    statement: markdowns/groups.md
+  - title: "Next Steps"
+    statement: markdowns/more.md

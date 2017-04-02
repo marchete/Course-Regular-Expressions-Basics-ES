@@ -1,0 +1,3 @@
+# Alternations
+
+ (aaa|bbb|ccc)
