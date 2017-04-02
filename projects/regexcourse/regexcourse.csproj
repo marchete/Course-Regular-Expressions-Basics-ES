@@ -13,7 +13,6 @@
   <ItemGroup>
     <Compile Include="Exercises\Exercise1.cs" />
     <Compile Include="Validator.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
 
 </Project>
