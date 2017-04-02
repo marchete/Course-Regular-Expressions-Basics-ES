@@ -5,7 +5,7 @@ namespace RegexCourse
     public class Exercise1
     {
         /**
-         * This function should match any vowel, both lowercase and uppercase
+         *  This function should match any vowel, both lowercase and uppercase
          **/
         public static Match MatchVowels(string text)
         {
