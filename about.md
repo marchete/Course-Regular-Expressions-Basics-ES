@@ -1,25 +1,18 @@
 # About Regular Expressions Basics
 This course is aimed as a fast, introductory course to Regular Expressions.
-
 Regular Expressions (aka Regex) is a powerful tool to make very complex text searches with just a few lines of code.
-
 ## Previous Knowledge:
 Basic programming knowledge: Strings, Variables, Arrays, Loops, Functions.
-
 Regex searches can be used in almost any programming language.
-
 ## Difficulty Level: 
 Intermediate.
 ## Estimated Time:
 40 minutes.
-
 ## What will I learn?
 Students will learn the most important features about Regular Expressions:
  Reserved characters on Regex, repetitions, alternations and capturing groups.
-
 ## Why should I learn?
-Regular Expressions it's widely used on:
-
+Regular Expressions are widely used on:
 -  General text searches: Find text based on complex patterns.
 -  Input validations: Email/URL/IP validators.
 -  Input parsing: Getting values from a long input string.
