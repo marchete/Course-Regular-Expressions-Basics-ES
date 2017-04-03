@@ -4,6 +4,8 @@ Regular Expressions (aka Regex) is a powerful tool to make very complex text sea
 ## Previous Knowledge:
 Basic programming knowledge: Strings, Variables, Arrays, Loops, Functions.
 Regex searches can be used in almost any programming language.
+C# is used on the Course, but only to store strings.
+You don't need any prior C# knowledge to complete the Course.
 ## Difficulty Level: 
 Intermediate.
 ## Estimated Time:
