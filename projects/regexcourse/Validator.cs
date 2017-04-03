@@ -50,6 +50,12 @@ namespace RegexCourse
 			  string Ref_char_captured = CreateHTMLMatches(Refregex,regexTest);
 			  string User_char_captured = CreateHTMLMatches(Userregex,regexTest);
 			  bool isCorrect = (Ref_char_captured == User_char_captured);
+
+                // Temporal
+                     Match refM = Refregex.Match(regexTest);
+                     Match userM = userregex.Match(regexTest);
+                     isCorrect = refM.Success == userM.Success;
+                //Temporal
               if (isCorrect) ++percentage;
 			  UnitTestOK = UnitTestOK && isCorrect;
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
