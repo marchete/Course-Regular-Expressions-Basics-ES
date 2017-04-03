@@ -9,7 +9,7 @@ namespace RegexCourse
     [TestClass]
     public class Validator
     {
-		public static string ReportPath = "/project/target/Reports/";
+		public static string ReportPath = "/project/target/";
 		public static string ReportTemplate = Path.Combine(ReportPath,"report.html");
 		public static string RowReport = @"<tr><td>%name%</td><td><span class=""glyphicon glyphicon-%ok1% text-%ok2%"" aria-hidden=""true""></span></td><td>%match1%</td><td>%match2%</td></tr>\r\n";
 		
@@ -32,14 +32,6 @@ namespace RegexCourse
 		
         public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases)
         {
-            var allFiles = Directory.GetFiles("/project", "report.html", SearchOption.AllDirectories);
-            foreach (string s in allFiles)
-            {
-                ReportTemplate = s;
-                ReportPath = System.IO.Path.GetDirectoryName(ReportTemplate);
-                Console.WriteLine("CG> message --channel \"user debug\" Path es '" + s + "'");
-            }
-
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
 			int percentage = 0;
@@ -64,7 +56,11 @@ namespace RegexCourse
 			}
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
-			Console.WriteLine("CG> open --static-dir "+path);
+
+            Console.WriteLine("CG> message --channel \"user debug\" Report is:"+path+" Size:"+new System.IO.FileInfo(path).Length);
+            
+
+            Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
 			return UnitTestOK;
         }
 		
@@ -89,7 +85,7 @@ namespace RegexCourse
 			regexcases.Add( new RegexUseCase("Consonants","DDDDRTTTTTTPQRWT"));
 			regexcases.Add( new RegexUseCase("Alphabet","ABCDEFGHIJKLMNOPQRSTUVWXYXZ+abcdefeghijklmnopqrstuvwxyz"));
 			regexcases.Add( new RegexUseCase("Lorem Ipsum","Lorem ipsum dolor sit amet, consectetur adipiscing elit."));
-			Assert.IsTrue(VerifyMatches("Exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases));
+			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases));
         }
     }
 }
