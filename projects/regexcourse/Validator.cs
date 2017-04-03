@@ -56,13 +56,13 @@ namespace RegexCourse
 			
 
             Regex Refregex = new Regex(RefPattern);
-			Regex Userregex = new Regex(UserPattern);
+			Regex Userregex = new Regex(RefPattern);
             bool UserInvalidPattern = false;
             try
             {
-                new Regex(UserPattern);
+                Userregex = new Regex(UserPattern);
             }
-            catch (System.ArgumentException ex) 
+            catch (Exception ex) 
             {
                 UserInvalidPattern = true;
                 Console.WriteLine("CG> message -c err "+ex.Message);
