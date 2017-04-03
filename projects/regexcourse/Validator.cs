@@ -21,11 +21,10 @@ namespace RegexCourse
 		  public RegexUseCase(string n, string v){Name = n; Value = v;}
         }  
 
-		public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest)
+		public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest,string MarkerColor)
 		{
 			string HTMLMatch = "";
             bool[] char_captured = new bool[regexTest.Value.Length];
-			//TODO: Add color to matches
             var matches = regex.Matches(regexTest.Value);
             foreach (Match m in matches)
             if (m.Success)
@@ -36,16 +35,15 @@ namespace RegexCourse
                 }
             }
 
-            if (char_captured[0]) HTMLMatch += "<span class='green-highlight'>";
+            if (char_captured[0]) HTMLMatch += "<span class='"+MarkerColor+"-highlight'>";
             HTMLMatch += regexTest.Value[0];
             for (int i = 1; i < regexTest.Value.Length;++i )
             {
                 if ( char_captured[i - 1] && !char_captured[i]) HTMLMatch += "</span>";
-                if (!char_captured[i - 1] &&  char_captured[i]) HTMLMatch += "<span class='green-highlight'>";
+                if (!char_captured[i - 1] && char_captured[i]) HTMLMatch += "<span class='" + MarkerColor + "-highlight'>";
                 HTMLMatch += regexTest.Value[i];
             }
             if (char_captured[regexTest.Value.Length - 1]) HTMLMatch += "</span>";
-//                HTMLMatch = regexTest.Value;
 			return HTMLMatch;
 		}
 		
@@ -67,16 +65,10 @@ namespace RegexCourse
 			string rowreport = "";
 			foreach (var regexTest in regexcases)
 			{
-			  string Ref_char_captured = CreateHTMLMatches(Refregex,regexTest);
-			  string User_char_captured = CreateHTMLMatches(Userregex,regexTest);
+			  string User_char_captured = CreateHTMLMatches(Userregex,regexTest,"yellow");
+              string Ref_char_captured = CreateHTMLMatches(Refregex, regexTest, "green");
 			  bool isCorrect = (Ref_char_captured == User_char_captured);
-
-                // Temporal
-                     Match refM = Refregex.Match(regexTest.Value);
-                     Match userM = Userregex.Match(regexTest.Value);
-                     isCorrect = refM.Success == userM.Success;
-                //Temporal
-                     if (isCorrect) ++countCorrect;
+              if (isCorrect) ++countCorrect;
 			  UnitTestOK = UnitTestOK && isCorrect;
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
