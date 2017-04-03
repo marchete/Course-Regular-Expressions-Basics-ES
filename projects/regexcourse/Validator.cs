@@ -37,10 +37,8 @@ namespace RegexCourse
             {
                 ReportTemplate = s;
                 ReportPath = System.IO.Path.GetDirectoryName(ReportTemplate);
-                Console.Error.WriteLine("Path es '" + s + "'");
+                Console.WriteLine("CG> message --channel \"user debug\" Path es '" + s + "'");
             }
-
-
 
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
@@ -50,7 +48,6 @@ namespace RegexCourse
             Regex Refregex = new Regex(RefPattern);
 			Regex Userregex = new Regex(UserPattern);
 
-            System.Error.Console.WriteLine("Path is " + System.IO.Path.GetDirectoryName(Application.ExecutablePath));
 			string contents = File.ReadAllText(ReportTemplate);
 			contents = contents.Replace("22",""+percentage); //Set percentage
 			contents = contents.Replace("%REPORT_NAME%",Title_Report); //Set Title
