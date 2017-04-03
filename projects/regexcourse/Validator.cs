@@ -9,7 +9,7 @@ namespace RegexCourse
     {
 		public static string ReportPath = @"/projects/regexcourse/Reports/";
 		public static string ReportTemplate = Path.Combine(ReportPath,"/report.html");
-		public static string RowReport = @"<tr><td>%name%</td><td><span class=\"glyphicon glyphicon-%ok1% text-%ok2%\" aria-hidden=\"true\"></span></td><td>%match1%</td><td>%match2%</td></tr>\r\n";
+		public static string RowReport = @"<tr><td>%name%</td><td><span class=""glyphicon glyphicon-%ok1% text-%ok2%"" aria-hidden=""true""></span></td><td>%match1%</td><td>%match2%</td></tr>\r\n";
 		
 		
 		public struct RegexUseCase
@@ -48,7 +48,7 @@ namespace RegexCourse
 			  string User_char_captured = CreateHTMLMatches(Userregex,regexTest);
 			  bool isCorrect = (Ref_char_captured == User_char_captured);
 			  UnitTestOK = UnitTestOK && isCorrect;
-			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace(%ok1%,(isCorrect?"ok":"remove")).Replace(%ok2%,(isCorrect?"success":"danger"))
+			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured);
 			}
 			contents = contents.Replace("%report_body%",rowreport);
@@ -63,7 +63,7 @@ namespace RegexCourse
         {
             string RefPattern = @"[aeiouAEIOU]";
 			string UserPattern = Exercise1.Pattern_MatchVowels;
-			List<RegexUseCase> regexcases = new List<RegexUseCase> regexcases();
+			List<RegexUseCase> regexcases = new List<RegexUseCase>();
 			regexcases.Add( new RegexUseCase("Simple a","a"));
 			regexcases.Add( new RegexUseCase("Simple e","e"));
 			regexcases.Add( new RegexUseCase("Simple i","i"));
