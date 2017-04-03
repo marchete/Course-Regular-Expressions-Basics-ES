@@ -9,7 +9,7 @@ namespace RegexCourse
     [TestClass]
     public class Validator
     {
-		public static string ReportPath = @"/projects/regexcourse/Reports/";
+		public static string ReportPath = @"./Reports/";
 		public static string ReportTemplate = Path.Combine(ReportPath,"/report.html");
 		public static string RowReport = @"<tr><td>%name%</td><td><span class=""glyphicon glyphicon-%ok1% text-%ok2%"" aria-hidden=""true""></span></td><td>%match1%</td><td>%match2%</td></tr>\r\n";
 		
