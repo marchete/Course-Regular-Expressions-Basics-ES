@@ -52,8 +52,8 @@ namespace RegexCourse
 			  bool isCorrect = (Ref_char_captured == User_char_captured);
 
                 // Temporal
-                     Match refM = Refregex.Match(regexTest);
-                     Match userM = Userregex.Match(regexTest);
+                     Match refM = Refregex.Match(regexTest.Value);
+                     Match userM = Userregex.Match(regexTest.Value);
                      isCorrect = refM.Success == userM.Success;
                 //Temporal
               if (isCorrect) ++percentage;
