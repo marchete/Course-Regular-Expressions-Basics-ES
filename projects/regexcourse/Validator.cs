@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 using System.IO;
+using System;
+
 namespace RegexCourse
 {
     [TestClass]
@@ -22,9 +24,9 @@ namespace RegexCourse
 		public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest)
 		{
 			string HTMLMatch = "";
-			bool[] char_captured = new bool[regexTest.Value.Length];
+            bool[] char_captured = new bool[regexTest.Value.Length];
 			//TODO: Add color to matches
-			HTMLMatch = regextTest.Value;
+            HTMLMatch = regexTest.Value;
 			return HTMLMatch;
 		}
 		
