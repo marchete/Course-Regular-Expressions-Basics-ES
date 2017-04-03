@@ -73,9 +73,9 @@ namespace RegexCourse
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
-            if (countCorrect == regexcases.Count) //100%
+            if (countCorrect == regexcases.Count) //100% Green Button
                contents = contents.Replace("%globalresult%", "success");
-            else if (countCorrect == 0) //0%
+            else if (countCorrect == 0) //0% Red Button
                 contents = contents.Replace("%globalresult%", "danger");
             else contents = contents.Replace("%globalresult%", "warning");
 
