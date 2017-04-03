@@ -34,6 +34,7 @@ namespace RegexCourse
         {
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
+            int countCorrect = 0;
 			int percentage = 0;
 			
 
@@ -56,22 +57,23 @@ namespace RegexCourse
                      Match userM = Userregex.Match(regexTest.Value);
                      isCorrect = refM.Success == userM.Success;
                 //Temporal
-              if (isCorrect) ++percentage;
+                     if (isCorrect) ++countCorrect;
 			  UnitTestOK = UnitTestOK && isCorrect;
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
-            if (percentage == regexcases.Count) //100%
+            if (countCorrect == regexcases.Count) //100%
                contents = contents.Replace("%globalresult%", "success");
-            else if (percentage == 0) //0%
+            else if (countCorrect == 0) //0%
                 contents = contents.Replace("%globalresult%", "danger");
             else contents = contents.Replace("%globalresult%", "warning");
-            percentage = 100*percentage / regexcases.Count;
+
+            percentage = 100 * countCorrect / regexcases.Count;
             contents = contents.Replace("22", "" + percentage); //Set percentage
 
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
-            Console.WriteLine("CG> message --channel \"user debug\" Report is:"+path+" Size:"+new System.IO.FileInfo(path).Length);
+            Console.WriteLine("CG> message Solved: "+countCorrect+"/"+regexcases.Count+" (" + percentage + "%). Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length);
             Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
 			return UnitTestOK;
         }
