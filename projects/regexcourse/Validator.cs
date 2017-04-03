@@ -55,15 +55,17 @@ namespace RegexCourse
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
-            percentage = percentage / regexcases.Count;
+            if (percentage == regexcases.Count) //100%
+               contents = contents.Replace("%globalresult%", success);
+            else if (percentage == 0) //0%
+                contents = contents.Replace("%globalresult%", danger);
+            else contents = contents.Replace("%globalresult%", warning);
+            percentage = 100*percentage / regexcases.Count;
             contents = contents.Replace("22", "" + percentage); //Set percentage
 
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
-
-            Console.WriteLine("CG> message --channel \"user debug\" Report is:"+path+" Size:"+new System.IO.FileInfo(path).Length);
-            
-
+//            Console.WriteLine("CG> message --channel \"user debug\" Report is:"+path+" Size:"+new System.IO.FileInfo(path).Length);
             Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
 			return UnitTestOK;
         }

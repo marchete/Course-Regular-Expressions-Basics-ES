@@ -5,6 +5,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script> 
+$(document).ready(function(){
+    $("#show_res").click(function(){
+        $("#tableres").slideToggle("slow");
+    });
+});
+</script>
 
 <style>
 
@@ -19,8 +26,9 @@
 <div class="gauge">
 <canvas id="canvas" width="200" height="200">22%</canvas>
 </div>
-<h3>Validators:</h3>
-<div class="exercise-results container-fluid">
+
+<button id="show_res" type="button" class="btn btn-%globalresult%">View Validators</button>
+<div id="tableres" class="exercise-results container-fluid">
         <table class="table table-responsive">
             <thead>
                 <tr>
@@ -31,25 +39,7 @@
                 </tr>
             </thead>
             <tbody>
-			    %report_body%
-                <tr >
-                    <td>1</td>
-                    <td><span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span></td>
-                    <td>Carter</td>
-                    <td>johncarter@mail.com</td>
-                </tr>
-                <tr >
-                    <td>2</td>
-                    <td><span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></td>
-                    <td>Parker</td>
-                    <td>peterparker@mail.com</td>
-                </tr>
-                <tr >
-                    <td>3</td>
-                    <td><span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></td>
-                    <td>Rambo</td>
-                    <td>johnrambo@mail.com</td>
-                </tr>
+%report_body%
             </tbody>
         </table>
 </div>
@@ -58,7 +48,7 @@
 <script>
 window.onload = function(){
     var percentage = 22;
-
+    if (percentage == 100) $("#tableres").hide();
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
 	var W = canvas.width;
