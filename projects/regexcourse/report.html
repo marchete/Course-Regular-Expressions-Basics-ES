@@ -10,17 +10,14 @@
 
 #canvas {
 	display: block;
-	width: 300px;
-	margin: 100px auto;
+	margin: 5px auto;
 }
 </style>
 </head>
 <body>
-<h1>%REPORT_NAME%</h1>
-
-<h3>Score:</h3>
+<!--<h1>%REPORT_NAME%</h1>-->
 <div class="gauge">
-<canvas id="canvas" width="300" height="300">22%</canvas>
+<canvas id="canvas" width="200" height="200">22%</canvas>
 </div>
 <h3>Validators:</h3>
 <div class="exercise-results container-fluid">
@@ -80,20 +77,24 @@ window.onload = function(){
 		ctx.clearRect(0, 0, W, H);
 		ctx.beginPath();
 		ctx.strokeStyle = bgcolor;
-		ctx.lineWidth = 15;
-		ctx.arc(W/2, H/2, 100, 0,- Math.PI*2, false);
+		ctx.lineWidth = 15*W/200;
+		ctx.arc(W/2, H/2, W/2.4, 0,- Math.PI*2, false);
 		ctx.stroke();
 		var radians = degrees * Math.PI / 180;
 		ctx.beginPath();
 		ctx.strokeStyle = color;
-		ctx.lineWidth = 25;
-		ctx.arc(W/2, H/2, 100, 0 + 90*Math.PI/180, radians + 90*Math.PI/180, false); 
+		ctx.lineWidth = 25*W/200;
+		ctx.arc(W/2, H/2, W/2.4, 0 + 90*Math.PI/180, radians + 90*Math.PI/180, false); 
 		ctx.stroke();
 		ctx.fillStyle = textcolor;
-		ctx.font = "bold 50px Arial";// 'Open Sans'";//"font-family: 'Open Sans',50 px,Lato,sans-serif!important;";
+		ctx.font = "bold "+(30*W/200)+"px Arial";
+		text = "Score:";
+		text_width = ctx.measureText(text).width;
+		ctx.fillText(text, W/2 - text_width/2, H/2 - 15*H/200);
+		ctx.font = "bold "+(50*W/200)+"px Arial";
 		text = Math.floor(degrees/360*100) + "%";
 		text_width = ctx.measureText(text).width;
-		ctx.fillText(text, W/2 - text_width/2, H/2 + 15);
+		ctx.fillText(text, W/2 - text_width/2, H/2 + 35*H/200);
 	}
 	
 	function draw()
