@@ -37,7 +37,7 @@ namespace RegexCourse
             }
 
             if (char_captured[0]) HTMLMatch += "<span class='green-highlight'>";
-            HTMLMatch += char_captured[0];
+            HTMLMatch += regexTest.Value[0];
             for (int i = 1; i < regexTest.Value.Length;++i )
             {
                 if ( char_captured[i - 1] && !char_captured[i]) HTMLMatch += "</span>";
