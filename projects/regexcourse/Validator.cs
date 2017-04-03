@@ -53,7 +53,7 @@ namespace RegexCourse
 
                 // Temporal
                      Match refM = Refregex.Match(regexTest);
-                     Match userM = userregex.Match(regexTest);
+                     Match userM = Userregex.Match(regexTest);
                      isCorrect = refM.Success == userM.Success;
                 //Temporal
               if (isCorrect) ++percentage;
@@ -62,10 +62,10 @@ namespace RegexCourse
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
             if (percentage == regexcases.Count) //100%
-               contents = contents.Replace("%globalresult%", success);
+               contents = contents.Replace("%globalresult%", "success");
             else if (percentage == 0) //0%
-                contents = contents.Replace("%globalresult%", danger);
-            else contents = contents.Replace("%globalresult%", warning);
+                contents = contents.Replace("%globalresult%", "danger");
+            else contents = contents.Replace("%globalresult%", "warning");
             percentage = 100*percentage / regexcases.Count;
             contents = contents.Replace("22", "" + percentage); //Set percentage
 
