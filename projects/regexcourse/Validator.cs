@@ -71,7 +71,7 @@ namespace RegexCourse
 
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
-//            Console.WriteLine("CG> message --channel \"user debug\" Report is:"+path+" Size:"+new System.IO.FileInfo(path).Length);
+            Console.WriteLine("CG> message --channel \"user debug\" Report is:"+path+" Size:"+new System.IO.FileInfo(path).Length);
             Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
 			return UnitTestOK;
         }
