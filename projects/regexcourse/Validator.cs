@@ -67,7 +67,7 @@ namespace RegexCourse
 			{
 			  string User_char_captured = CreateHTMLMatches(Userregex,regexTest,"yellow");
               string Ref_char_captured = CreateHTMLMatches(Refregex, regexTest, "green");
-			  bool isCorrect = (Ref_char_captured == User_char_captured);
+              bool isCorrect = (Ref_char_captured == User_char_captured.Replace("class='yellow-highlight","class='green-highlight"));
               if (isCorrect) ++countCorrect;
 			  UnitTestOK = UnitTestOK && isCorrect;
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
