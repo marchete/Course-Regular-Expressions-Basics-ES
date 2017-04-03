@@ -9,7 +9,7 @@ namespace RegexCourse
     [TestClass]
     public class Validator
     {
-		public static string ReportPath = @"./Reports/";
+		public static string ReportPath = "/project/target/bin/Debug/netcoreapp1.1";
 		public static string ReportTemplate = Path.Combine(ReportPath,"report.html");
 		public static string RowReport = @"<tr><td>%name%</td><td><span class=""glyphicon glyphicon-%ok1% text-%ok2%"" aria-hidden=""true""></span></td><td>%match1%</td><td>%match2%</td></tr>\r\n";
 		
@@ -32,6 +32,16 @@ namespace RegexCourse
 		
         public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases)
         {
+            var allFiles = Directory.GetFiles("/", "report.html", SearchOption.AllDirectories);
+            foreach (string s in allFiles)
+            {
+                ReportTemplate = s;
+                ReportPath = System.IO.Path.GetDirectoryName(ReportTemplate);
+                Console.Error.WriteLine("Path es '" + s + "'");
+            }
+
+
+
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
 			int percentage = 0;
@@ -39,6 +49,8 @@ namespace RegexCourse
 
             Regex Refregex = new Regex(RefPattern);
 			Regex Userregex = new Regex(UserPattern);
+
+            System.Error.Console.WriteLine("Path is " + System.IO.Path.GetDirectoryName(Application.ExecutablePath));
 			string contents = File.ReadAllText(ReportTemplate);
 			contents = contents.Replace("22",""+percentage); //Set percentage
 			contents = contents.Replace("%REPORT_NAME%",Title_Report); //Set Title
