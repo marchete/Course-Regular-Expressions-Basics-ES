@@ -19,6 +19,48 @@ $(document).ready(function(){
 	display: block;
 	margin: 5px auto;
 }
+.green-highlight, .pink-highlight, .yellow-highlight {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 3px;
+ }
+
+.green-highlight {
+    background: #99FFCC;
+}
+
+.green-highlight::selection {
+    background: #99CCCC; 
+}
+
+.green-highlight::-moz-selection {
+    background: #99CCCC;
+}
+
+.pink-highlight {
+    background: #FFCCFF;
+}
+
+.pink-highlight::selection {
+    background: #FF99FF;
+}
+
+.pink-highlight::-moz-selection {
+    background: #FF99FF;
+}
+
+.yellow-highlight {
+    background: #FFFFCC;
+}
+
+.yellow-highlight::selection {
+    background: #FFFF66;
+}
+
+.yellow-highlight::-moz-selection {
+    background: #FFFF66;
+}
 </style>
 </head>
 <body>
