@@ -37,7 +37,7 @@ $(document).ready(function(){
 <body>
 <!--<h1>%REPORT_NAME%</h1>-->
 <div class="gauge">
-<canvas id="canvas" width="200" height="200">22%</canvas>
+<canvas id="canvas" width="200" height="200">%percent%%</canvas>
 </div>
 
 
@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 <script>
 window.onload = function(){
-    var percentage = 22;
+    var percentage = %percent%;
     if (percentage == 100) $("#tableres").hide();
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");

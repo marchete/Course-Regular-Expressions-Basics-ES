@@ -73,15 +73,13 @@ namespace RegexCourse
 			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
-            if (countCorrect == regexcases.Count) //100% Green Button
-               contents = contents.Replace("%globalresult%", "success");
-            else if (countCorrect == 0) //0% Red Button
-                contents = contents.Replace("%globalresult%", "danger");
-            else contents = contents.Replace("%globalresult%", "warning");
-
             percentage = 100 * countCorrect / regexcases.Count;
-            contents = contents.Replace("22", "" + percentage); //Set percentage
-
+            if (countCorrect == regexcases.Count)
+                contents = contents.Replace("%globalresult%", "success");  //100% Score Green Button
+            else if (percentage < 16)
+                contents = contents.Replace("%globalresult%", "danger");   //Low Score <16%, send a Red Button
+            else contents = contents.Replace("%globalresult%", "warning"); //Something in between, yellow button
+            contents = contents.Replace("%percent%", "" + percentage); //Set percentage
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
             Console.WriteLine("CG> message Solved: "+countCorrect+"/"+regexcases.Count+" (" + percentage + "%). Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length);
