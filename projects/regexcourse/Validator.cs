@@ -62,10 +62,10 @@ namespace RegexCourse
             {
                 Userregex = new Regex(UserPattern);
             }
-            catch (Exception ex) 
+            catch (ArgumentException ex) 
             {
                 UserInvalidPattern = true;
-                Console.WriteLine("CG> message -c err "+ex.Message);
+                Console.WriteLine("CG> message -c err INCORRECT REGEX: '"+ex.Message+"'");
             }
 			string contents = File.ReadAllText(ReportTemplate);
 
