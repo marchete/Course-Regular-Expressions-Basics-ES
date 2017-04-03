@@ -57,7 +57,16 @@ namespace RegexCourse
 
             Regex Refregex = new Regex(RefPattern);
 			Regex Userregex = new Regex(UserPattern);
-
+            bool UserInvalidPattern = false;
+            try
+            {
+                new Regex(UserPattern);
+            }
+            catch (System.ArgumentException ex) 
+            {
+                UserInvalidPattern = true;
+                Console.WriteLine("CG> message -c err "+ex.Message);
+            }
 			string contents = File.ReadAllText(ReportTemplate);
 
 			contents = contents.Replace("%REPORT_NAME%",Title_Report); //Set Title
@@ -65,8 +74,11 @@ namespace RegexCourse
 			string rowreport = "";
 			foreach (var regexTest in regexcases)
 			{
-			  string User_char_captured = CreateHTMLMatches(Userregex,regexTest,"yellow");
+			  string User_char_captured ;
               string Ref_char_captured = CreateHTMLMatches(Refregex, regexTest, "green");
+              if (UserInvalidPattern)
+                   User_char_captured = "Error, Invalid Regex Pattern";
+              else User_char_captured = CreateHTMLMatches(Userregex, regexTest, "yellow");
               bool isCorrect = (Ref_char_captured == User_char_captured.Replace("class='yellow-highlight","class='green-highlight"));
               if (isCorrect) ++countCorrect;
 			  UnitTestOK = UnitTestOK && isCorrect;
