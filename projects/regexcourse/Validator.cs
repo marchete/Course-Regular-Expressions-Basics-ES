@@ -122,5 +122,25 @@ namespace RegexCourse
 			regexcases.Add( new RegexUseCase("Lorem Ipsum","Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
 			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases));
         }
+
+        [TestMethod]
+        public void VerifyExercise1()
+        {
+            string RefPattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b";
+            string UserPattern = Example1.Pattern_Email;
+            List<RegexUseCase> regexcases = new List<RegexUseCase>();
+            regexcases.Add(new RegexUseCase("Valid Email 1", "email@example.com"));
+            regexcases.Add(new RegexUseCase("Valid Email 2", "name.surname@evil-big-corp.co.uk"));
+            regexcases.Add(new RegexUseCase("Valid Email in Sentence", "Hi, this is an email: checkthisout@awsomeness_day.com"));
+            regexcases.Add(new RegexUseCase("Valid Email Weird", "This a weird valid email: this__.__%++a.a@a.-.-.-.-.com.-.-.-.-.what.-.es believe it or not."));
+            regexcases.Add(new RegexUseCase("Lorem Ipsum with email", "Lorem Ipsum dolor sit amet, socrates@old.-.classics.gr consectetur adipiscing elit."));
+            regexcases.Add(new RegexUseCase("Invalid Email 1", "email@@example.com"));
+            regexcases.Add(new RegexUseCase("Invalid Email 2", "email@example.comunications"));
+            regexcases.Add(new RegexUseCase("Invalid Email 3", "This@is not an email address at all"));
+            regexcases.Add(new RegexUseCase("Invalid Email 4", "452345I31234"));
+            regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
+            Assert.IsTrue(VerifyMatches("example1.html", "Example 1 - Email pattern", RefPattern, UserPattern, regexcases));
+        }
+
     }
 }
