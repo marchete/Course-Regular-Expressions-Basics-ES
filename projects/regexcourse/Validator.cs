@@ -124,7 +124,7 @@ namespace RegexCourse
         }
 
         [TestMethod]
-        public void VerifyExercise1()
+        public void VerifyExample1()
         {
             string RefPattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b";
             string UserPattern = Example1.Pattern_Email;

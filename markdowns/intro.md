@@ -1,5 +1,6 @@
 # Introduction
 A regular expression (or the acronym "regex") is a pattern that allows complex text searches. 
+
 Imagine you need to search email addresses on a given text. An email address has a complex structure: it has an account part, the @ sign and the domain name part, and each part has it's own restrictions. This is a hard task to do if you try to program it as usual, with loops, simple text searches and conditionals.
 
 Instead of that, let's try to search email addresses with a regular expression. 
