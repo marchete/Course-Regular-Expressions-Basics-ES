@@ -9,8 +9,8 @@ In the example below, there is a code with an email regex pattern. To test it, p
 ### Example - Searching E-mail addresses
 @[Regex pattern to search E-mail addresses]({"stubs": ["Exercises/Example1.cs"],"command": "RegexCourse.Validator.VerifyExample1"})
 
-If you click on the `View Validators` button you'll see what it's matching on each validator, highlighted with a color.
-Use the `<span class="glyphicon glyphicon-thumbs-up"></span> Hints` button if you got stuck on some Exercise.
+If you click on the **`View Validators`** button you'll see what it's matching on each validator, highlighted with a color.
+Use the **`Hints`** button if you got stuck on some Exercise.
 
 As you see, a regex pattern is a very powerful tool. It's used on a lot of different fields and programs.
 
