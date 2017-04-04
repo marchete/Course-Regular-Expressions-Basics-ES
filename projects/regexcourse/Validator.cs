@@ -47,7 +47,7 @@ namespace RegexCourse
 			return HTMLMatch;
 		}
 		
-        public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases)
+        public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases,string hints)
         {
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
@@ -70,6 +70,7 @@ namespace RegexCourse
 			string contents = File.ReadAllText(ReportTemplate);
 
 			contents = contents.Replace("%REPORT_NAME%",Title_Report); //Set Title
+            contents = contents.Replace("%hints%", hints); 
 			
 			string rowreport = "";
 			foreach (var regexTest in regexcases)
@@ -103,6 +104,7 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise1()
         {
+            string hints = "Vowels are: a,e,i,o,u and A,E,I,O,U. Create a simple character set that contains only these characters.";
             string RefPattern = @"[aeiouAEIOU]";
 			string UserPattern = Exercise1.Pattern_MatchVowels;
 			List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -120,12 +122,13 @@ namespace RegexCourse
 			regexcases.Add( new RegexUseCase("Consonants","bCdFgHjKlMnPqRsTvWxYz"));
 			regexcases.Add( new RegexUseCase("Alphabet","AbCdEfGhIjKlMnOpQrStUvWxYz"));
 			regexcases.Add( new RegexUseCase("Lorem Ipsum","Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
-			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases));
+			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases,hints));
         }
 
         [TestMethod]
         public void VerifyExample1()
         {
+            string hints = "On this button you'll get hints for solving each exercise.";
             string RefPattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b";
             string UserPattern = Example1.Pattern_Email;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -140,7 +143,7 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("Invalid Email 4", "This@is not an email address at all"));
             regexcases.Add(new RegexUseCase("Invalid Email 5", "452345I31234"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
-            Assert.IsTrue(VerifyMatches("example1.html", "Example 1 - Email pattern", RefPattern, UserPattern, regexcases));
+            Assert.IsTrue(VerifyMatches("example1.html", "Example 1 - Email pattern", RefPattern, UserPattern, regexcases,hints));
         }
 
     }
