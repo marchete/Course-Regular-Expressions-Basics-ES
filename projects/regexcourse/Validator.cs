@@ -146,8 +146,8 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise3()
         {
-            string hints = @"The exercise asked for consonants, that can be matched with [a-z-[aeiou]A-Z-[AEIOU]]. After that you need to create a character set for vowels, but only on lowercase. Finally you must create a character set with [ns]. Joining the three character sets will create the solution.";
-            string RefPattern = @"[a-z-[aeiou]A-Z-[AEIOU]][aeiou][ns]";
+            string hints = @"The exercise asked for consonants, that can be matched with [a-zA-Z-[aeiouAEIOU]]. After that you need to create a character set for vowels, but only on lowercase. Finally you must create a character set with [ns]. Joining the three character sets will create the solution.";
+            string RefPattern = @"[a-zA-Z-[aeiouAEIOU]][aeiou][ns]";
             string UserPattern = Exercise3.Pattern_Exercise3;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
             regexcases.Add(new RegexUseCase("Simple set", "This is an example for capturing regex matches"));
