@@ -27,4 +27,4 @@ For this reason I use string literals on C# (see https://msdn.microsoft.com/en-u
 ```
 If you use another language you must ensure that your regex pattern is literal. Otherwise you'll get unexpected results, or you'll need to escape non literal characters.
 
-Click on **"NEXT LESSON"** to learn about reserved characters in Regular Expressions.
+Click on **`NEXT LESSON`** to learn about reserved characters in Regular Expressions.
