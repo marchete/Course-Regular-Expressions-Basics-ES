@@ -1,4 +1,4 @@
-﻿namespace RegexCourse{
+namespace RegexCourse{
     public static class Example1{
 		//Email validator pattern. The string starts with @" because that's the way literal strings
 		// are defined in C#, otherwise C# will treat the character \ differently inside the string
