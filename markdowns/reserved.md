@@ -1,11 +1,11 @@
 # Reserved Characters
 
 ### Literal Characters: Letters, digits and unicode
-All letters and digits on a regex pattern are literal characters, so the regex engine will search exactly that pattern without any other processing.
+All letters, digits and unicode characters on a regex pattern are literal, so the regex engine will search exactly that pattern without any other processing.
 
 So if you search `at`, your pattern will match on these strings: "**at**","c**at**", "b**at**", "f**at**","you need to be **at** home **at** 10".
 
-**Remember:** Regex patterns are case sensitive, although there are ways to set it to case insensitive (it depends on the language used).
+>**Remember:** Regex patterns are case sensitive, although there are ways to set it to case insensitive (it depends on the language used).
 
 ### Reserved Character List
 
@@ -14,10 +14,18 @@ Almost any other character (both ASCII and Unicode) will be treated as literals 
 **But** there is a list of reserved, special, characters.
 These are the most important (we will see all those on more detail on next lessons):
 
+ <i class="icon-file"></i>
+
+ ```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+ 
 | Chars | Description |
 | ------ | ------ |
 | `.` | Any single character. |
-| `\|` | Or expression (one or another). |
+| `||` | Or expression (one or another). |
 | `[` `]` | Character set delimitators. |
 | `(` `)` | Grouping delimitators. |
 | `{` `}` | Repetitions delimitators. |
