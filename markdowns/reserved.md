@@ -14,18 +14,10 @@ Almost any other character (both ASCII and Unicode) will be treated as literals 
 **But** there is a list of reserved, special, characters.
 These are the most important (we will see all those on more detail on next lessons):
 
- <i class="icon-file"></i>
-
- ```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
- 
 | Chars | Description |
 | ------ | ------ |
 | `.` | Any single character. |
-| `||` | Or expression (one or another). |
+| `&#124;` | Or expression (one or another). |
 | `[` `]` | Character set delimitators. |
 | `(` `)` | Grouping delimitators. |
 | `{` `}` | Repetitions delimitators. |
