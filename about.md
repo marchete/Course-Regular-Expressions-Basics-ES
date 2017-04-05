@@ -21,6 +21,6 @@ Regular Expressions are widely used on:
 -  Web servers and proxies: Nginx, Apache use regex.
 -  Log analyzers: For searching log patterns.
 -  Saving the day:
-![alt text](https://imgs.xkcd.com/comics/regular_expressions.png "XKCD Comic - Saving the day")
+![alt text](https://imgs.xkcd.com/comics/regular_expressions.png =250x "XKCD Comic - Saving the day")
 
 And the last one it's true, I saved my day by making a two line regex search for certain info on legal documents, reducing search times by 20x. Client was impressed about how smart my search was.
