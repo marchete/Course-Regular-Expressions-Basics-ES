@@ -36,12 +36,12 @@ namespace RegexCourse
             }
 
             if (char_captured[0]) HTMLMatch += "<span class='"+MarkerColor+"-highlight'>";
-            HTMLMatch += regexTest.Value[0];
+            HTMLMatch += System.Security.SecurityElement.Escape(""+regexTest.Value[0]);
             for (int i = 1; i < regexTest.Value.Length;++i )
             {
                 if ( char_captured[i - 1] && !char_captured[i]) HTMLMatch += "</span>";
                 if (!char_captured[i - 1] && char_captured[i]) HTMLMatch += "<span class='" + MarkerColor + "-highlight'>";
-                HTMLMatch += regexTest.Value[i];
+                HTMLMatch += System.Security.SecurityElement.Escape(""+regexTest.Value[i]);
             }
             if (char_captured[regexTest.Value.Length - 1]) HTMLMatch += "</span>";
 			return HTMLMatch;
@@ -158,6 +158,63 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("No Matches II", "BAn bEn CIs coS DuN dAS FeN fIN GOs gUn HaS heN JiN jOS KUn kAs LuN lEs MIs mAn NUN nAS POS pUn QEs qUs RUn rES SuN sAS TEn taN VoN vAN WAS wEN XIn xAN ZeN zaS"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet , consectetur adipiscing elit."));
             Assert.IsTrue(VerifyMatches("exercise3.html", "Exercise 3 - Complex sets", RefPattern, UserPattern, regexcases, hints));
+        }
+
+        [TestMethod]
+        public void VerifyExercise4()
+        {
+            string hints = @"As <text> and </text> are very similar use ? to make the / optional: </?text>. Then text part is defined as a character set with a lazy repetition of 1 or more.";
+            string RefPattern = @"</?[\sa-zA-Z0-9=""-_:]+?>";
+            string UserPattern = Exercise4.Pattern_Exercise4;
+            List<RegexUseCase> regexcases = new List<RegexUseCase>();
+
+            string xml1 = 
+@"<?xml version=""1.0""?>
+<catalog>
+   <book id=""bk101"">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book>
+   <book id=""bk102"">
+      <author>Ralls, Kim</author>
+      <title>Midnight Rain</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-12-16</publish_date>
+      <description>A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.</description>
+   </book>
+</catalog>";
+
+string xml2 =
+@"<?xml version=""1.0"" encoding=""UTF-8""?>
+ <cookbook>
+     <recipe xml:id=""Pommodoro_Mezzo"">
+         <title>Pommodoro Mezzo e Mezzo</title>
+         <ingredient name=""Tomatoes""
+                     quantity=""2""
+                     unit=""pieces""></ingredient>
+         <ingredient name=""Salt""
+                     quantity=""2""
+                     unit=""grams""> </ingredient>
+         <time quantity=""1"" unit=""minute""> </time>
+         <method>
+             <step>1. Pick a knife.</step>
+             <step>2. Cut the tomato exactly on half.</step>
+             <step>3. Serve.</step>
+             <step>4. Eat.</step>
+         </method>
+     </recipe>
+ </cookbook>";
+            regexcases.Add(new RegexUseCase("XML File 1", xml1));
+            regexcases.Add(new RegexUseCase("XML File 2", xml2));
+            Assert.IsTrue(VerifyMatches("exercise4.html", "Exercise 4 - XML Tags", RefPattern, UserPattern, regexcases, hints));
         }
 
         [TestMethod]
