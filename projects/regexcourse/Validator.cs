@@ -138,6 +138,7 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("Bad years", "1999 20000 02000 2200 2209 2390 1885 20999"));
             regexcases.Add(new RegexUseCase("Bad years 2", "n2000 f2001 20r20 203E5 a2076 92089 k2110 21309+ a2149 21d71 n2189 2199x"));
             regexcases.Add(new RegexUseCase("Numbers", "01235467689"));
+            regexcases.Add(new RegexUseCase("IT Crowd 😁", "118 999 881 999 119 725...3"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet 2122,1983 consectetur adipiscing elit."));
             Assert.IsTrue(VerifyMatches("exercise2.html", "Exercise 2 - Searching years", RefPattern, UserPattern, regexcases, hints));
         }
