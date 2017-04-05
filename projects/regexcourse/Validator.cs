@@ -198,23 +198,22 @@ string xml2 =
  <cookbook>
      <recipe xml:id=""Pommodoro_Mezzo"">
          <title>Pommodoro Mezzo e Mezzo</title>
-         <ingredient name=""Tomatoes""
-                     quantity=""2""
-                     unit=""pieces""></ingredient>
-         <ingredient name=""Salt""
-                     quantity=""2""
-                     unit=""grams""> </ingredient>
+         <ingredient quantity=""2""
+                     unit=""pieces"">Tomatoes</ingredient>
+         <ingredient quantity=""2""
+                     unit=""grams"">Salt </ingredient>
          <time quantity=""1"" unit=""minute""> </time>
          <method>
              <step>1. Pick a knife.</step>
              <step>2. Cut the tomato exactly on half.</step>
-             <step>3. Serve.</step>
-             <step>4. Eat.</step>
+             <step>3. Add salt.</step>
+             <step>4. Serve.</step>
+             <step>5. Eat.</step>
          </method>
      </recipe>
  </cookbook>";
-            regexcases.Add(new RegexUseCase("XML File 1", xml1));
-            regexcases.Add(new RegexUseCase("XML File 2", xml2));
+            regexcases.Add(new RegexUseCase("XML File 1", xml2));
+            regexcases.Add(new RegexUseCase("XML File 2", xml1));
             Assert.IsTrue(VerifyMatches("exercise4.html", "Exercise 4 - XML Tags", RefPattern, UserPattern, regexcases, hints));
         }
 
