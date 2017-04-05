@@ -11,7 +11,7 @@ Examples:
 - Example 1: `(yes|no)` Will search exactly `yes` OR `no`.
 - Example 2: `(yes|no){2,4}` Will search `yes` OR `no` repeated between two and four times.
 - Example 3: `\b([0-9]+|[a-z]+)\b` Will search a word made entirely of digits OR a word made entirely of lowercase letters. But it won't match mixes of letters and digits.
-- Example 4: ```regex ((yes|no){2,4}|\b([0-9]+|[a-z]+)\b)``` Combination of the two previous patterns. So it matches either the same as "Example 1" OR "Example 2".
+- Example 4: `((yes|no){2,4}|\b([0-9]+|[a-z]+)\b)` Combination of the two previous patterns. So it matches either the same as "Example 1" OR "Example 2".
 
 @[Exercise 5 - Alternations ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
 
