@@ -100,10 +100,26 @@ namespace RegexCourse
             Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
 			return UnitTestOK;
         }
-		
+
 
         [TestMethod]
         public void VerifyExercise1()
+        {
+            string hints = "The best option is to use the pattern [ain]";
+            string RefPattern = @"[ain]";
+            string UserPattern = Exercise1.Pattern_Exercise1;
+            List<RegexUseCase> regexcases = new List<RegexUseCase>();
+            regexcases.Add(new RegexUseCase("Pain Gain", "No pain, no gain"));
+            regexcases.Add(new RegexUseCase("Many ain's", "Pain gain main saint maintenance"));
+            regexcases.Add(new RegexUseCase("Uppercased", "Won't match: NO PAIN, NO GAIN"));
+            regexcases.Add(new RegexUseCase("Random Sentence 1", "Again he is talking about Genetic Algorithm in CSB!"));
+            regexcases.Add(new RegexUseCase("Random Sentence 2", "Classic Denzel"));
+            regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
+            Assert.IsTrue(VerifyMatches("exercise1.html", "Exercise 1 - [ain] pattern", RefPattern, UserPattern, regexcases, hints));
+        }
+
+        [TestMethod]
+        public void VerifyExercise2()
         {
             string hints = "Vowels are: a,e,i,o,u and A,E,I,O,U. Create a simple character set that contains only these characters.";
             string RefPattern = @"[aeiouAEIOU]";
@@ -123,7 +139,7 @@ namespace RegexCourse
 			regexcases.Add( new RegexUseCase("Consonants","bCdFgHjKlMnPqRsTvWxYz"));
 			regexcases.Add( new RegexUseCase("Alphabet","AbCdEfGhIjKlMnOpQrStUvWxYz"));
 			regexcases.Add( new RegexUseCase("Lorem Ipsum","Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
-			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases,hints));
+			Assert.IsTrue(VerifyMatches("exercise2.html","Exercise 2 - Match vowels",RefPattern,UserPattern,regexcases,hints));
         }
 
         [TestMethod]
@@ -146,6 +162,23 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
             Assert.IsTrue(VerifyMatches("example1.html", "Example 1 - Email pattern", RefPattern, UserPattern, regexcases,hints));
         }
+
+        [TestMethod]
+        public void VerifyExample2()
+        {
+            string hints = "On this button you'll get hints for solving each exercise.";
+            string RefPattern = @"ain";
+            string UserPattern = Example2.Pattern_Example2;
+            List<RegexUseCase> regexcases = new List<RegexUseCase>();
+            regexcases.Add(new RegexUseCase("Pain Gain", "No pain, no gain"));
+            regexcases.Add(new RegexUseCase("Many ain's", "Pain gain main saint maintenance"));
+            regexcases.Add(new RegexUseCase("Uppercased", "Won't match: NO PAIN, NO GAIN"));
+            regexcases.Add(new RegexUseCase("Random Sentence 1", "Again he is talking about Genetic Algorithm in CSB!"));
+            regexcases.Add(new RegexUseCase("Random Sentence 2", "Classic Denzel"));
+            regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
+            Assert.IsTrue(VerifyMatches("example2.html", "Example 2 - ain pattern", RefPattern, UserPattern, regexcases, hints));
+        }
+
 
     }
 }

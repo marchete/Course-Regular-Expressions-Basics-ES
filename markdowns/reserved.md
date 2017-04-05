@@ -1,7 +1,7 @@
 # Characters And Metacharacters
 
 ### Literal Characters: Letters, digits and unicode
-All letters, digits and unicode characters on a regex pattern are literal, so the regex engine will search exactly that pattern without any other processing.
+All letters, digits and (most) unicode characters on a regex pattern are literal, so the regex engine will search exactly that pattern without any other processing.
 
 So if you search `at`, your pattern will match on these strings: "**at**","c**at**", "b**at**", "f**at**","you need to be **at** home **at** 10".
 
@@ -43,7 +43,7 @@ The symbol `\` can precede any metacharacter to escape it, but it can be combine
 | `\W` | Just the opposite to the previous metacharacter. |
 | `\d` | Any digit, 0 to 9. |
 | `\D` | Just the opposite to the previous metacharacter. |
-| `\b` | Word boundaries. It's an anchor used to find the start or the end of a word (any number or \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
+| `\b` | Word boundaries. It's an anchor used to find the start or the end of a word (any number of \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
 | `\B` | Just the opposite to the previous metacharacter. |
 | `\t` | Tabulation. |
 | `\r` | Return carriage. |
@@ -52,3 +52,5 @@ The symbol `\` can precede any metacharacter to escape it, but it can be combine
 | `\S` | Just the opposite to the previous metacharacter. |
 
 >**Note:** There are many other patterns with `\`, but these are the most important.
+
+Click on **`NEXT LESSON`** to learn about Character Sets.
