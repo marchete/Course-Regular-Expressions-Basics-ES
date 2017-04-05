@@ -17,7 +17,7 @@ These are the most important (we will see all those on more detail on next lesso
 | Chars | Description |
 | ------ | ------ |
 | `.` | Any single character. |
-| `|` | Or expression (one or another). |
+| `\|` | Or expression (one or another). |
 | `[` `]` | Character set delimitators. |
 | `(` `)` | Grouping delimitators. |
 | `{` `}` | Repetitions delimitators. |
