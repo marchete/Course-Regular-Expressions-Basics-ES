@@ -223,17 +223,35 @@ string xml2 =
         [TestMethod]
         public void VerifyExercise5()
         {
-            string hints = @"Exercise 5";
-            string RefPattern = @"[a-zA-Z-[aeiouAEIOU]][aeiou][ns]";
+            string hints = @"<filename> part is a character set that can be repeated 1 or more times, followed by a literal dot.<Extension> part can be created as an alternation of each possible extension, just take care that each character on them must be both lowercase and uppercase [pP][nN][gG] for example.";
+            string RefPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+\.([jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])";
             string UserPattern = Exercise5.Pattern_Exercise5;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
-            regexcases.Add(new RegexUseCase("Simple set", "This is an example for capturing regex matches"));
-            regexcases.Add(new RegexUseCase("Matches", "Mask mask can send. Test then senseless foxes troubles"));
-            regexcases.Add(new RegexUseCase("Matches II", "Ban ben Cis cos Dun das Fen fin Gos gun Has hen Jin jos Kun kas Lun les Mis man Nun nas Pos pun Qes qus Run res Sun sas Ten tan Von van Was wen Xin xan Zen zas"));
-            regexcases.Add(new RegexUseCase("No Matches", "MAsk MaSk sEnd TEST"));
-            regexcases.Add(new RegexUseCase("No Matches II", "BAn bEn CIs coS DuN dAS FeN fIN GOs gUn HaS heN JiN jOS KUn kAs LuN lEs MIs mAn NUN nAS POS pUn QEs qUs RUn rES SuN sAS TEn taN VoN vAN WAS wEN XIn xAN ZeN zaS"));
-            regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet , consectetur adipiscing elit."));
-            Assert.IsTrue(VerifyMatches("exercise5.html", "Exercise 5 - Complex sets", RefPattern, UserPattern, regexcases, hints));
+            regexcases.Add(new RegexUseCase("Simple image", "image.jpg"));
+            regexcases.Add(new RegexUseCase("Several images", "image1.jpg image2.jpeg image3.png image4.bmp image5.gif"));
+            regexcases.Add(new RegexUseCase("Double extension", "image.jpg.gif"));
+            regexcases.Add(new RegexUseCase("Invalid images", "image,jpg myphotos.gpeg imagejpg .gif"));
+            regexcases.Add(new RegexUseCase("Images with symbols", "image1.dot.jpg image2...+..+...gif image3.d-_-b.___.bmp image(=copy=).gif"));
+            regexcases.Add(new RegexUseCase("Mixed Uppercase", "image1.DOt.Jpg iMAge2...+..+...GIF IMAGE3.d-_-b.___.Bmp IMAGE(=copy=).gIF"));
+            regexcases.Add(new RegexUseCase("Image with path", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG"));
+            Assert.IsTrue(VerifyMatches("exercise5.html", "Exercise 5 - Image files", RefPattern, UserPattern, regexcases, hints));
+        }
+
+        [TestMethod]
+        public void VerifyExercise6()
+        {
+            string hints = @"<filename> part is a character set that can be repeated 1 or more times, followed by a literal dot.<Extension> part can be created as an alternation of each possible extension, just take care that each character on them must be both lowercase and uppercase [pP][nN][gG] for example.";
+            string RefPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+\.([jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])";
+            string UserPattern = Exercise6.Pattern_Exercise6;
+            List<RegexUseCase> regexcases = new List<RegexUseCase>();
+            regexcases.Add(new RegexUseCase("Simple image", "image.jpg"));
+            regexcases.Add(new RegexUseCase("Several images", "image1.jpg image2.jpeg image3.png image4.bmp image5.gif"));
+            regexcases.Add(new RegexUseCase("Double extension", "image.jpg.gif"));
+            regexcases.Add(new RegexUseCase("Invalid images", "image,jpg myphotos.gpeg imagejpg .gif"));
+            regexcases.Add(new RegexUseCase("Images with symbols", "image1.dot.jpg image2...+..+...gif image3.d-_-b.___.bmp image(=copy=).gif"));
+            regexcases.Add(new RegexUseCase("Mixed Uppercase", "image1.DOt.Jpg iMAge2...+..+...GIF IMAGE3.d-_-b.___.Bmp IMAGE(=copy=).gIF"));
+            regexcases.Add(new RegexUseCase("Image with path", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG"));
+            Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints));
         }
 
         [TestMethod]
