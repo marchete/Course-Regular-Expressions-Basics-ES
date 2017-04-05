@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 using System.IO;
 using System;
+using System.Net;
 
 namespace RegexCourse
 {
@@ -36,12 +37,12 @@ namespace RegexCourse
             }
 
             if (char_captured[0]) HTMLMatch += "<span class='"+MarkerColor+"-highlight'>";
-            HTMLMatch += System.Security.SecurityElement.Escape(""+regexTest.Value[0]);
+            HTMLMatch += WebUtility.HtmlEncode("" + regexTest.Value[0]);
             for (int i = 1; i < regexTest.Value.Length;++i )
             {
                 if ( char_captured[i - 1] && !char_captured[i]) HTMLMatch += "</span>";
                 if (!char_captured[i - 1] && char_captured[i]) HTMLMatch += "<span class='" + MarkerColor + "-highlight'>";
-                HTMLMatch += System.Security.SecurityElement.Escape(""+regexTest.Value[i]);
+                HTMLMatch += WebUtility.HtmlEncode("" + regexTest.Value[i]);
             }
             if (char_captured[regexTest.Value.Length - 1]) HTMLMatch += "</span>";
 			return HTMLMatch;
