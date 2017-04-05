@@ -26,6 +26,7 @@ These are the most important (we will see all those on more detail on next lesso
 | `?` | Zero or one repetition. Also it's used for lazy matches. |
 | `^` | Start of the string. You can use it to force a pattern to match only at start. Also it's used as negative inside character sets. |
 | `$` | End of the string. |
+| `/` | Separator. On many regex engines regex patterns must be enclosed with them |
 | `\`  | Escape character of all reserved characters, so \\? will search the literal ?. It's also used for other special search patterns (see below).  |
 
 They are called metacharacters.
@@ -43,7 +44,7 @@ The symbol `\` can precede any metacharacter to escape it, but it can be combine
 | `\W` | Just the opposite to the previous metacharacter. |
 | `\d` | Any digit, 0 to 9. |
 | `\D` | Just the opposite to the previous metacharacter. |
-| `\b` | Word boundaries. It's used to find the start or the end of a word (any number of \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
+| `\b` | Word boundaries. It's an anchor used to find the start or the end of a word (any number of \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
 | `\B` | Just the opposite to the previous metacharacter. |
 | `\t` | Tabulation. |
 | `\r` | Return carriage. |
