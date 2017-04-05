@@ -32,4 +32,6 @@ A common use for `?` is to allow both singular and plural words: `cats?` will ma
 Repetitions are greedy on searches, it tries to get the largest match possible. Sometimes that's undesired, you can force a lazy search by adding `?` after `*` or `+`.
 That instructs the regex engine to make a lazy search, the smallest match possible.
 
-@[Exercise 4 - Simple XML Tags ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
+@[Exercise 4 - Simplified XML Tags ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
+
+Click on **`NEXT LESSON`** to learn about Alternations.
