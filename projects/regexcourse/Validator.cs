@@ -164,7 +164,7 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise4()
         {
-            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more.";
+            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [\sa-zA-Z0-9=""""_:-]+?";
             string RefPattern = @"<\/?[\sa-zA-Z0-9=""_:-]+?>";
             string UserPattern = Exercise4.Pattern_Exercise4;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
