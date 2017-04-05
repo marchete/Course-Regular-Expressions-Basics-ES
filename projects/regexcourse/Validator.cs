@@ -70,8 +70,8 @@ namespace RegexCourse
             }
 			string contents = File.ReadAllText(ReportTemplate);
 
-			contents = contents.Replace("%REPORT_NAME%",Title_Report); //Set Title
-            contents = contents.Replace("%hints%", hints); 
+            contents = contents.Replace("%REPORT_NAME%", WebUtility.HtmlEncode(Title_Report)); //Set Title
+            contents = contents.Replace("%hints%", WebUtility.HtmlEncode(hints)); 
 			
 			string rowreport = "";
 			foreach (var regexTest in regexcases)
@@ -84,7 +84,7 @@ namespace RegexCourse
               bool isCorrect = (Ref_char_captured == User_char_captured.Replace("class='yellow-highlight","class='green-highlight"));
               if (isCorrect) ++countCorrect;
 			  UnitTestOK = UnitTestOK && isCorrect;
-			  rowreport += RowReport.Replace("%name%",regexTest.Name).Replace("%ok1%",(isCorrect?"ok":"remove")).Replace("%ok2%",(isCorrect?"success":"danger"))
+              rowreport += RowReport.Replace("%name%", WebUtility.HtmlEncode(regexTest.Name)).Replace("%ok1%", (isCorrect ? "ok" : "remove")).Replace("%ok2%", (isCorrect ? "success" : "danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
             percentage = 100 * countCorrect / regexcases.Count;
@@ -165,7 +165,7 @@ namespace RegexCourse
         public void VerifyExercise4()
         {
             //string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [\sa-zA-Z0-9=_:\-&quot;&quot;]+?";
-            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: ?";
+            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [\sa-zA-Z0-9=""_:-]";
             string RefPattern = @"<\/?[\sa-zA-Z0-9=""_:-]+?>";
             string UserPattern = Exercise4.Pattern_Exercise4;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
