@@ -164,10 +164,15 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise4()
         {
-            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [\sa-zA-Z0-9=_:-&quot;&quot;]+?";
+            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [\sa-zA-Z0-9=_:\-&quot;&quot;]+?";
             string RefPattern = @"<\/?[\sa-zA-Z0-9=""_:-]+?>";
             string UserPattern = Exercise4.Pattern_Exercise4;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
+            regexcases.Add(new RegexUseCase("Opening Tag", "<tag>"));
+            regexcases.Add(new RegexUseCase("Closing Tag","</tag>"));
+            regexcases.Add(new RegexUseCase("No Tag","</tag"));
+            regexcases.Add(new RegexUseCase("Two Tags", "   <tag></tag>   "));
+            regexcases.Add(new RegexUseCase("Two Tags and Text", "<check+check>Text unmatched</check+check>"));
 
             string xml1 = 
 @"<?xml version=""1.0""?>

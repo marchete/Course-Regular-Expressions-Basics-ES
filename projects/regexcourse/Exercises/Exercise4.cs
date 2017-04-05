@@ -1,6 +1,6 @@
 namespace RegexCourse{
     public static class Exercise4{
-		//Write a regex pattern to match simplified XML tags
+		//Write a regex pattern to match simplified XML tags.
         //Simplified XML tags will be defined as <text> or </text>
 		//text has size >=1, and can contain these characters:
 		//  -Any letter
