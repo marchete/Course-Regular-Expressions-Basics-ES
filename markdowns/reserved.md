@@ -5,7 +5,7 @@ All letters and digits on a regex pattern are literal characters, so the regex e
 
 So if you search `at`, your pattern will match on these strings: "**at**","c**at**", "b**at**", "f**at**","you need to be **at** home **at** 10".
 
-*Remember that regex patterns are case sensitive, although there are ways to set it to case insensitive (it depends on the language used).*
+**Remember:** Regex patterns are case sensitive, although there are ways to set it to case insensitive (it depends on the language used).
 
 ### Reserved Character List
 
