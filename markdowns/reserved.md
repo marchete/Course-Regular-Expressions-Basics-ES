@@ -3,7 +3,7 @@
 ### Literal Characters: Letters, digits and unicode
 All letters, digits and (most) unicode characters on a regex pattern are literal, so the regex engine will search exactly that pattern without any other processing.
 
-So if you search `at`, your pattern will match on these strings: "**at**","c**at**", "b**at**", "f**at**","you need to be **at** home **at** 10".
+So if you search `at`, your pattern will match on these strings: "**at**","c**at**", "b**at**", "l**at**er","you need to be **at** home **at** 10".
 
 >**Remember:** Regex patterns are case sensitive, although there are ways to set it to case insensitive (it depends on the language used).
 

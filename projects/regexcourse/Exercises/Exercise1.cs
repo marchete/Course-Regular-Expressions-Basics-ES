@@ -1,6 +1,7 @@
 namespace RegexCourse{
     public static class Exercise1{
-		//Create a character set for matching a,i or n
-        public static string Pattern_Exercise1=@"";
+		//Write a regex pattern to match any vowel, both lowercase and uppercase
+		//"Y" or "y" aren't considered vowels in this exercise
+        public static string Pattern_MatchVowels=@"";
     }
 }
