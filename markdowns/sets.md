@@ -16,7 +16,7 @@ Using the pattern `[a-z]` you'll match any character from a to z (a,b,c,d,e....x
 You can also combine several ranges inside the character set, `[B-Ga-v]` is valid.
 As stated before, regex patterns are case sensitive, `[a-z]` and `[A-Z]` matches differently.
 
-There is a special case with the `^` metacharacter, that create a negative match. `[^2-5]` will match with any character except 2,3,4 and 5. But take care because that doesn't mean it just matches with 0,1,6,7,8 or 9, it matches with any other character, even letters and symbols
+There is a special case with the `^` metacharacter, that create a negative match. `[^2-5]` will match with any character except 2,3,4 and 5. But take care because that doesn't mean it just matches with 0,1,6,7,8 or 9, it matches with any other character, even letters and symbols.
 
 Some regex engines (check your language first) support character set substractions and intersections.
 - Substractions are usually defined as `[range-[subrange_to_remove]]`, like `[0-9-[2-7]]` to have a set that matches only 0,1,8 or 9.
