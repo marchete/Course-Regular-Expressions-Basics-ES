@@ -29,7 +29,7 @@ These are the most important (we will see all those on more detail on next lesso
 | `\`  | Escape character of all reserved characters, so \\? will search the literal ?. It's also used for other special search patterns (see below).  |
 
 They are called metacharacters.
->**Anchors:** `^` and `$` are also called anchors because they match zero characters.
+>**Anchors:** `^` and `$` are also called anchors. Anchors match zero characters.
 
 >**Note:** In other searching engines, the `*` is the wildcard, it matches everything. But in regex the wildcard is created with the union of two metacharacters: `.*`, that means "any single character zero or more times". Similarly, on other searches `?` is equivalent to `.` in regex (any single character, once).
 
@@ -43,7 +43,7 @@ The symbol `\` can precede any metacharacter to escape it, but it can be combine
 | `\W` | Just the opposite to the previous metacharacter. |
 | `\d` | Any digit, 0 to 9. |
 | `\D` | Just the opposite to the previous metacharacter. |
-| `\b` | Word boundaries. It's an anchor used to find the start or the end of a word (any number of \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
+| `\b` | Word boundaries. It's used to find the start or the end of a word (any number of \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
 | `\B` | Just the opposite to the previous metacharacter. |
 | `\t` | Tabulation. |
 | `\r` | Return carriage. |
@@ -52,5 +52,16 @@ The symbol `\` can precede any metacharacter to escape it, but it can be combine
 | `\S` | Just the opposite to the previous metacharacter. |
 
 >**Note:** There are many other patterns with `\`, but these are the most important.
+
+### Search flags and modifiers
+Most regex engines have some flags to change the search behaviour.
+Check your language to know how to apply them.
+
+| Modifier | Description |
+| ------ | ------ |
+| i | Case insensitive search |
+| g | Global search. Some regex engines stop on the first match, that forces to search all possible matches. |
+| s | Single line, `.` will match `\n` so the whole text is considered a single long line.  |
+| m | Multiline, `^` and `$` will match on each line, and not only at start and end of string.  |
 
 Click on **`NEXT LESSON`** to learn about Character Sets.
