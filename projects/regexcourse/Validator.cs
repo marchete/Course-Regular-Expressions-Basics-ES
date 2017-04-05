@@ -123,7 +123,7 @@ namespace RegexCourse
         {
             string hints = "Vowels are: a,e,i,o,u and A,E,I,O,U. Create a simple character set that contains only these characters.";
             string RefPattern = @"[aeiouAEIOU]";
-			string UserPattern = Exercise1.Pattern_MatchVowels;
+			string UserPattern = Exercise2.Pattern_MatchVowels;
 			List<RegexUseCase> regexcases = new List<RegexUseCase>();
 			regexcases.Add( new RegexUseCase("Simple a","a"));
 			regexcases.Add( new RegexUseCase("Simple e","e"));

@@ -10,7 +10,7 @@ Now let's check how regex matches are different when using the character sets
 @[Example 2 - Searching `ain` pattern]({"stubs": ["Exercises/Example2.cs"],"command": "RegexCourse.Validator.VerifyExample2"})
 
 >**Note:** On this first exercise you'll need to create the pattern, and then run the code
-@[Exercise 1 - Searching <code>&#91;ain&#93;</code> pattern]({"stubs": ["Exercises/Exercise1.cs"],"command": "RegexCourse.Validator.VerifyExercise1"})
+@["Exercise 1 - Searching \[ain\] pattern"]({"stubs": ["Exercises/Exercise1.cs"],"command": "RegexCourse.Validator.VerifyExercise1"})
 
 
 ### Range character set
