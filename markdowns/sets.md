@@ -18,5 +18,6 @@ Now let's check how regex matches are different when using the character sets
 
 >**Note:** Remember `\w` from the previous lesson? It's shorthand for `[a-zA-Z0-9_]`
 
-#### Exercise 2 - Create a regex pattern to select vowels only
-@[Create a pattern to match vowels ]({"stubs": ["Exercises/Exercise2.cs"],"command": "RegexCourse.Validator.VerifyExercise2"})
+@[Exercise 2 - Create a pattern to match vowels ]({"stubs": ["Exercises/Exercise2.cs"],"command": "RegexCourse.Validator.VerifyExercise2"})
+
+@[Exercise 3 - Searching years ]({"stubs": ["Exercises/Exercise2.cs"],"command": "RegexCourse.Validator.VerifyExercise2"})
