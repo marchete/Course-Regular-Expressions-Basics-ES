@@ -164,7 +164,7 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise4()
         {
-            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [a-zA-Z0-9=\s""\-_:]";
+            string hints = @"As <text> and </text> are very similar use ? to make the / optional: <\/?text>. Then text part is defined as a character set with a lazy repetition of 1 or more: [a-zA-Z0-9=\s""""\-_:]";
             string RefPattern = @"<\/?[a-zA-Z0-9=\s""\-_:]+?>";
             string UserPattern = Exercise4.Pattern_Exercise4;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -177,24 +177,21 @@ namespace RegexCourse
             string xml1 = 
 @"<?xml version=""1.0""?>
 <catalog>
-   <book id=""bk101"">
-      <author>Gambardella, Matthew</author>
-      <title>XML Developer's Guide</title>
+   <book id=""Book1"">
+      <author>Doe, John</author>
+      <title>Regular Expressions 101</title>
       <genre>Computer</genre>
-      <price>44.95</price>
-      <publish_date>2000-10-01</publish_date>
-      <description>An in-depth look at creating applications 
-      with XML.</description>
+      <price>88.22</price>
+      <publish_date>2017-01-01</publish_date>
+      <description>Regex in all its sexyness.</description>
    </book>
-   <book id=""bk102"">
-      <author>Ralls, Kim</author>
-      <title>Midnight Rain</title>
+   <book id=""Book2"">
+      <author>Knight, Michael</author>
+      <title>Knight Rider</title>
       <genre>Fantasy</genre>
-      <price>5.95</price>
-      <publish_date>2000-12-16</publish_date>
-      <description>A former architect battles corporate zombies, 
-      an evil sorceress, and her own childhood to become queen 
-      of the world.</description>
+      <price>19.82</price>
+      <publish_date>1982-08-08</publish_date>
+      <description>KITT, help me!</description>
    </book>
 </catalog>";
 
@@ -204,9 +201,9 @@ string xml2 =
      <recipe xml:id=""Pommodoro_Mezzo"">
          <title>Pommodoro Mezzo e Mezzo</title>
          <ingredient quantity=""2""
-                     unit=""pieces"">Tomatoes</ingredient>
+                     unit=""piece"">Tomatoes</ingredient>
          <ingredient quantity=""2""
-                     unit=""grams"">Salt </ingredient>
+                     unit=""gr"">Salt </ingredient>
          <time quantity=""1"" unit=""minute""> </time>
          <method>
              <step>1. Pick a knife.</step>
