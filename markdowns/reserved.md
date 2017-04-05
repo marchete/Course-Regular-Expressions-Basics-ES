@@ -58,10 +58,10 @@ Most regex engines have some flags to change the search behaviour.
 Check your language to know how to apply them.
 
 | Modifier | Description |
-| ------ | ------ |
+| --- | ------ |
 | i | Case insensitive search |
 | g | Global search. Some regex engines stop on the first match, that forces to search all possible matches. |
-| s | Single line, `.` will match `\n` so the whole text is considered a single long line.  |
+| s | Single line, `.` will match `\n` so the whole text is considered as a single line.  |
 | m | Multiline, `^` and `$` will match on each line, and not only at start and end of string.  |
 
 Click on **`NEXT LESSON`** to learn about Character Sets.

@@ -15,13 +15,9 @@ As you see, a character set with `[` `]` matches any single character declared i
 
 ### Range character set
 A simple character set can be bothersome to declare when you need to match the whole alphabet, or digits.
-
 For that reason on Regular Expressions you can use `-` to declare ranges of consecutive characters.
-
 Using the pattern `[a-z]` you'll match any character from a to z (a,b,c,d,e....x,y or z), `[2-5]` will match any number from 2 to 5.
-
 You can also combine several ranges inside the character set, `[B-Ga-v]` is valid.
-
 As stated before, regex patterns are case sensitive, `[a-z]` and `[A-Z]` matches differently.
 
 There is a special case with the `^` metacharacter, that create a negative match. `[^2-5]` will match with any character except 2,3,4 and 5. But take care because that doesn't mean it just matches with 0,1,6,7,8 or 9, it matches with any other character, even letters and symbols
@@ -36,3 +32,5 @@ Some regex engines (check your language first) support character set substractio
 
 @[Exercise 3 - Searching years from 2000 to 2199 ]({"layout": "aside","stubs": ["Exercises/Exercise3.cs"],"command": "RegexCourse.Validator.VerifyExercise3"})
 Regex is especially bad when searching numeric ranges. There is no easy way to create a regex pattern for arbitrary ranges (i.e. numbers from 733 to 8586)
+
+Click on **`NEXT LESSON`** to learn about Repetitions in Regular Expressions.
