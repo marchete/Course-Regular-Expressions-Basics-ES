@@ -20,4 +20,4 @@ Now let's check how regex matches are different when using the character sets
 
 @[Exercise 2 - Create a pattern to match vowels ]({"stubs": ["Exercises/Exercise2.cs"],"command": "RegexCourse.Validator.VerifyExercise2"})
 
-@[Exercise 3 - Searching years ]({"stubs": ["Exercises/Exercise2.cs"],"command": "RegexCourse.Validator.VerifyExercise2"})
+@[Exercise 3 - Searching years 2000 to 2199 ]({"stubs": ["Exercises/Exercise3.cs"],"command": "RegexCourse.Validator.VerifyExercise3"})
