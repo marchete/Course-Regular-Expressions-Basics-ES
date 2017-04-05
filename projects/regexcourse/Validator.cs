@@ -146,15 +146,15 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise3()
         {
-            string hints = "Years have 4 digits: First will be always 2, second will be either 0 or 1, and the last two can be 0-9. Remember to add \b at start and end to define the word boundaries";
+            string hints = @"Years have 4 digits: First will be always 2, second will be either 0 or 1, and the last two can be 0-9. Remember to add \b at start and end to define the word boundaries";
             string RefPattern = @"\b2[0-1][0-9][0-9]\b";
             string UserPattern = Exercise3.Pattern_Exercise3;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
             regexcases.Add(new RegexUseCase("Good years", "2000 2001 2020 2035 2076 2089 2110 2139 2149 2171 2189 2199"));
             regexcases.Add(new RegexUseCase("Bad years", "1999 20000 02000 2200 2209 2390 1885 20999"));
-            regexcases.Add(new RegexUseCase("Bad years 2", "-2000 f2001 20r20 203E5 a2076 #2089 -2110 2139+ a2149 21d71 n2189 2199x"));
+            regexcases.Add(new RegexUseCase("Bad years 2", "n2000 f2001 20r20 203E5 a2076 92089 k2110 2139+ a2149 21d71 n2189 2199x"));
             regexcases.Add(new RegexUseCase("Numbers", "01235467689"));
-            regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
+            regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet 2122, consectetur adipiscing elit."));
             Assert.IsTrue(VerifyMatches("exercise3.html", "Exercise 3 - Searching years", RefPattern, UserPattern, regexcases, hints));
         }
 
