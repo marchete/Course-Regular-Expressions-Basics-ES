@@ -13,6 +13,6 @@ Examples:
 - Example 3: `\b([0-9]+|[a-z]+)\b` Will search a word made entirely of digits OR a word made entirely of lowercase letters. But it won't match mixes of letters and digits.
 - Example 4: `(([Yy]es|[Nn]o){2,4}|\b([0-9]+|[a-z]+)\b)` Combination of the two previous patterns. So it matches either the same as "Example 1" OR "Example 2".
 
-@[Exercise 5 - Alternations ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
+@[Exercise 5 - Alternations ]({"stubs": ["Exercises/Exercise5.cs"],"command": "RegexCourse.Validator.VerifyExercise5"})
 
 Click on **`NEXT LESSON`** to learn about Groups and Capturing Groups.
