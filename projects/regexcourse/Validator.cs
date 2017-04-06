@@ -26,7 +26,7 @@ namespace RegexCourse
         //Matching using Named Groups
         public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest, List<string> GroupMatches)
         {
-            string[] pen_colors = new int[] { "yellow","green","pink","blue","red","grey"};
+            string[] pen_colors = new string[] { "yellow","green","pink","blue","red","grey"};
             string HTMLMatch = "";
             int[] char_captured = new int[regexTest.Value.Length]; //Each group will have an index, starting from 0
             //Set array to -1, because index starts at 0
