@@ -15,4 +15,4 @@ Examples:
 
 @[Exercise 5 - Search Image Files ]({"stubs": ["Exercises/Exercise5.cs"],"command": "RegexCourse.Validator.VerifyExercise5"})
 
-Click on **`NEXT LESSON`** to learn about Groups and Capturing Groups.
+Continue to next lesson to learn about Groups and Capturing Groups.

@@ -29,4 +29,4 @@ Regex is especially bad when searching numeric ranges. There is no easy way to c
 
 @[Exercise 3 - Complex pattern sets ]({"stubs": ["Exercises/Exercise3.cs"],"command": "RegexCourse.Validator.VerifyExercise3"})
 
-Click on **`NEXT LESSON`** to learn about Repetitions in Regular Expressions.
+Continue to the next lesson to learn about Repetitions in Regular Expressions.

@@ -66,4 +66,4 @@ Check your language to know how to apply them.
 | s | Single line, `.` will match `\n` so the whole text is considered as a single line.  |
 | m | Multiline, `^` and `$` will match on each line, and not only at start and end of string.  |
 
-Click on **`NEXT LESSON`** to learn about Character Sets.
+On the next lesson we will learn about Character Sets.

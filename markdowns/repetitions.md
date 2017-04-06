@@ -37,4 +37,4 @@ That instructs the regex engine to make a lazy search, the smallest match possib
 >**Note:** Regex is not recommended for parsing XML or HTML. See: http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags 
 But for simple things it can find what you need.
 
-Click on **`NEXT LESSON`** to learn about Alternations.
+On the next lesson you'll learn about Alternations.

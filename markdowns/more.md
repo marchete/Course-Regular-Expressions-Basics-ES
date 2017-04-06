@@ -22,3 +22,20 @@ Regular Expressions has good characteristics for text searching, but it also has
 4. There are many different regex engines, and each one has different sintaxis, so you need to learn some particular flags and metacharacters depending on the language.
 
 In my opinion Regular Expressions is a must have for anybody that works on IT related stuff (programming, databases, OS, etc.). One day or another you'll face a problem where you need to process text files, searching some data based on patterns. In these tasks is where Regular Expressions excels.
+
+** Codingame Puzzles **
+There are many Codingame puzzles where you can use Regular Expressions:
+https://www.codingame.com/ide/puzzle/brackets-extreme-edition Using regex to replace some brackets
+https://www.codingame.com/ide/puzzle/spreadsheet-labels At least one user published a solution using Regular Expressions in C#.
+https://www.codingame.com/ide/puzzle/scrabble Both another user and me solved this puzzle using a Regex match in C#. 
+https://www.codingame.com/ide/puzzle/hourglass Solved by two users in Ruby with regex patterns I can't even understand ☺
+https://www.codingame.com/ide/puzzle/reverse-polish-notation Some users got instruction sets as (ADD|SUB|MUL|DIV|MOD|SWP) alternations.
+https://www.codingame.com/ide/puzzle/anagrams Some users solved this with character sets like `[CFILORUX]` in Ruby
+https://www.codingame.com/ide/puzzle/number-of-letters-in-a-number---binary One C# user solved it with Regular Expressions 
+https://www.codingame.com/ide/puzzle/xml-mdf-2016 Many users on published Ruby solutions used regular expresions to filter input data.
+And the list goes on and on.
+
+** Other interesting links **
+https://regex101.com/ Online regex tester. One of the best on the net.
+http://www.regexpal.com/ Online regex tester.
+http://www.rexegg.com/ So much information about Regular Expressions that you'll hate regex with all your heart.

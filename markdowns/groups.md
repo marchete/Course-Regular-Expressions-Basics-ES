@@ -38,5 +38,3 @@ Each language and regex engine define how to access all matched groups. Check yo
 
 >**Note:** There are many others types of grouping, for lookahead, lookbehind, atomic groups, conditionals, recursion,...
 All them are out of scope of this course.
-
-Click on **`NEXT LESSON`** to go to the final lesson.
