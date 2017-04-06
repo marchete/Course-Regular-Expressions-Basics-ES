@@ -57,6 +57,9 @@ namespace RegexCourse
                 HTMLMatch += WebUtility.HtmlEncode("" + regexTest.Value[i]);
             }
             if (char_captured[regexTest.Value.Length - 1] >= 0) HTMLMatch += "</span>";
+
+            //Dirty Dirty Fix for Groups. I don't know why :\ is being captured. Sorry bout that
+            HTMLMatch = HTMLMatch.Replace(@"<span class='yellow-highlight'>" + WebUtility.HtmlEncode(@":\"), WebUtility.HtmlEncode(@":\")+@"<span class='yellow-highlight'>");
             return HTMLMatch;
         }
 
