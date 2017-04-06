@@ -241,7 +241,11 @@ string xml2 =
         public void VerifyExercise6()
         {
             string hints = @"<filename> part is a character set that can be repeated 1 or more times, followed by a literal dot.<Extension> part can be created as an alternation of each possible extension, just take care that each character on them must be both lowercase and uppercase [pP][nN][gG] for example.";
-            string RefPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+\.([jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])";
+            string TextPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+";
+            string DrivePattern = @"(?<Drive>[a-zA-Z])";
+            string DirsPattern = @"(?<Path>(?:" + TextPattern + @"\\)*)";
+            string FilePattern = @"(?<Name>" + TextPattern + @"\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF]))";
+            string RefPattern = DrivePattern+@":\\"+DirsPattern+FilePattern;
             string UserPattern = Exercise6.Pattern_Exercise6;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
             regexcases.Add(new RegexUseCase("Simple image", "image.jpg"));

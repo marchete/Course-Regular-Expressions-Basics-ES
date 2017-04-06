@@ -31,8 +31,10 @@ The following regex pattern:
 Name:"(?<Name>[\w]+?)".*?Surname:"(?<Surname>[\w]+?)".*?Email:"(?<Email>\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b)"
 ```
 Will match each data and will create three Name Groups: Group 'Name' with data `John`, Group 'Surname' with data `Doe` and Group 'Email' with data `john@example.com`.
+Each language and regex engine define how to access all matched groups. Check yours to learn how to iterate and process matched groups.
 
-Each language and regex engine define how to access all matched groups. Check your to learn how to iterate and process matched groups.
+@[Exercise 6 - Image Files with Path ]({"stubs": ["Exercises/Exercise6.cs"],"command": "RegexCourse.Validator.VerifyExercise6"})
+
 
 >**Note:** There are many others types of grouping, for lookahead, lookbehind, atomic groups, conditionals, recursion,...
 All them are out of scope of this course.
