@@ -295,13 +295,13 @@ string xml2 =
         public void VerifyExercise6()
         {
             string hints = @"<filename> part is a character set that can be repeated 1 or more times, followed by a literal dot.<Extension> part can be created as an alternation of each possible extension, just take care that each character on them must be both lowercase and uppercase [pP][nN][gG] for example.";
-            string DrivePattern = @"(?<Drive>[a-zA-Z])";
+            string DrivePattern = @"(?<Drive>\b[a-zA-Z])";
 
             string DirPattern = @"[a-zA-Z0-9\-+_=\(\)]+";
             string DirsPattern = @"(?<Path>(?:" + DirPattern + @"\\)*)";
 
             string TextPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+";
-            string FilePattern = @"(?<Name>" + TextPattern + @"\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF]))";
+            string FilePattern = @"(?<Name>" + TextPattern + @"\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])\b)";
 
             string RefPattern = DrivePattern+@":\\"+DirsPattern+FilePattern;
 
@@ -312,12 +312,13 @@ string xml2 =
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
             regexcases.Add(new RegexUseCase("Simple image", @"D:\image.jpg"));
             regexcases.Add(new RegexUseCase("Several images", @"E:\image1.jpg F:\image2.Jpeg Z:\image3.PnG x:\image3.d-_-b.___.bmp V:\image(=copy=).gif"));
-            regexcases.Add(new RegexUseCase("Double extension", @"j:\image.jpg.gif"));
-            regexcases.Add(new RegexUseCase("Invalid images", @"D:\image,jpg c:\myphotos.gpeg imagejpg .gif d:\ f:\d\d\d.txt f:\a\b\.jpg"));
+            regexcases.Add(new RegexUseCase("Double extension", @"E:\image1.Exe.jpg F:\image2.XLS.Jpeg Z:\image3.TXT.PnG x:\image3.d-_-b.___.txt.bmp V:\image(=copy=).gif.jpg"));
+            regexcases.Add(new RegexUseCase("Invalid images", @"D:\image,jpg c:\myphotos.gpeg imagejpg .gif d:\ f:\d\d\d.txt f:\a\b\.jpg dd:\nodoubledriveletter.jpg"));
             regexcases.Add(new RegexUseCase("Long path", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG"));
             regexcases.Add(new RegexUseCase("Invalid path 1", @"C:\\Moss\Documents\Images\My_image.copy.JPG"));
             regexcases.Add(new RegexUseCase("Invalid path 2", @"C:My_image.copy.JPG"));
-            regexcases.Add(new RegexUseCase("Invalid path 3", @"C:\..\dir\My_image.copy.JPG"));
+            regexcases.Add(new RegexUseCase("Invalid path 3", @"C:\..\dir\My_image.copy.JPG C:\?\$\My_image.copy.JPG"));
+            regexcases.Add(new RegexUseCase("Multiple files", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG C:\01\02\03\04\05+06\Picture.copy.JpG X:\++\--\__\==\==+-+-.jpg"));
             Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints, GroupMatches));
         }
 
