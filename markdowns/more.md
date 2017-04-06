@@ -25,17 +25,20 @@ In my opinion Regular Expressions is a must have for anybody that works on IT re
 
 ** Codingame Puzzles **
 There are many Codingame puzzles where you can use Regular Expressions:
-https://www.codingame.com/ide/puzzle/brackets-extreme-edition Using regex to replace some brackets
-https://www.codingame.com/ide/puzzle/spreadsheet-labels At least one user published a solution using Regular Expressions in C#.
-https://www.codingame.com/ide/puzzle/scrabble Both another user and me solved this puzzle using a Regex match in C#. 
-https://www.codingame.com/ide/puzzle/hourglass Solved by two users in Ruby with regex patterns I can't even understand ☺
-https://www.codingame.com/ide/puzzle/reverse-polish-notation Some users got instruction sets as (ADD|SUB|MUL|DIV|MOD|SWP) alternations.
-https://www.codingame.com/ide/puzzle/anagrams Some users solved this with character sets like `[CFILORUX]` in Ruby
-https://www.codingame.com/ide/puzzle/number-of-letters-in-a-number---binary One C# user solved it with Regular Expressions 
-https://www.codingame.com/ide/puzzle/xml-mdf-2016 Many users on published Ruby solutions used regular expresions to filter input data.
+
+-  https://www.codingame.com/ide/puzzle/brackets-extreme-edition Using regex to replace some brackets
+-  https://www.codingame.com/ide/puzzle/spreadsheet-labels At least one user published a solution using Regular Expressions in C#.
+-  https://www.codingame.com/ide/puzzle/scrabble Both another user and me solved this puzzle using a Regex match in C#. 
+-  https://www.codingame.com/ide/puzzle/hourglass Solved by two users in Ruby with regex patterns I can't even understand ☺
+-  https://www.codingame.com/ide/puzzle/reverse-polish-notation Some users got instruction sets as (ADD|SUB|MUL|DIV|MOD|SWP) alternations.
+-  https://www.codingame.com/ide/puzzle/anagrams Some users solved this with character sets like `[CFILORUX]` in Ruby
+-  https://www.codingame.com/ide/puzzle/number-of-letters-in-a-number---binary One C# user solved it with Regular Expressions 
+-  https://www.codingame.com/ide/puzzle/xml-mdf-2016 Many users on published Ruby solutions used regular expresions to filter input data.
+
 And the list goes on and on.
 
 ** Other interesting links **
-https://regex101.com/ Online regex tester. One of the best on the net.
-http://www.regexpal.com/ Online regex tester.
-http://www.rexegg.com/ So much information about Regular Expressions that you'll hate regex with all your heart.
+-  https://regex101.com/ Online regex tester. One of the best on the net.
+-  http://www.regexpal.com/ Online regex tester.
+-  http://www.rexegg.com/ So much information about Regular Expressions that you'll hate regex with all your heart.
+
