@@ -294,7 +294,15 @@ string xml2 =
         [TestMethod]
         public void VerifyExercise6()
         {
-            string hints = @"<filename> part is a character set that can be repeated 1 or more times, followed by a literal dot.<Extension> part can be created as an alternation of each possible extension, just take care that each character on them must be both lowercase and uppercase [pP][nN][gG] for example.";
+            string hints = @"
+//That's a hard one:
+ public static string DrivePattern = @""(?<Drive>\b[a-zA-Z])"";
+ public static string DirPattern = @""[a-zA-Z0-9\-+_=\(\)]+"";
+ public static string DirsPattern = @""(?<Path>(?:"" + DirPattern + @""\\)*)"";
+ public static string TextPattern = @""[a-zA-Z0-9\.\-+_=\(\)]+"";
+ public static string FilePattern = @""(?<Name>"" + TextPattern + @""\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])\b)"";
+ public static string Pattern_Exercise6= DrivePattern+@"":\\""+DirsPattern+FilePattern;
+";
             string DrivePattern = @"(?<Drive>\b[a-zA-Z])";
 
             string DirPattern = @"[a-zA-Z0-9\-+_=\(\)]+";
