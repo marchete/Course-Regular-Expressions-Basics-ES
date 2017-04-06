@@ -28,8 +28,7 @@ These are the most important (we will see all those on more detail on next lesso
 | `$` | End of the string. |
 | `/` | Separator. On many regex engines regex patterns must be enclosed with them |
 | `-` | Range definition. Used to define range of consecutive characters, like A-Z |
-
-| `\`  | Escape character of all reserved characters, so \\? will search the literal ?. It's also used for other special search patterns (see below).  |
+| `\` | Escape character of all reserved characters, so \\? will search the literal ?. It's also used for other special search patterns (see below).  |
 
 They are called metacharacters.
 >**Anchors:** `^` and `$` are also called anchors. Anchors match zero characters.
