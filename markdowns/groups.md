@@ -18,7 +18,7 @@ So you can use a pattern like that: `Name:"([\w]+?)"` to capture just the useful
 >**Note:** If you apply a repetition to a group, only the last match of the repetition is stored. `([\w])+?` will only give you the last matched characted, whereas `([\w]+?)` group have the repetition inside, so it will give you all matched characters.
 
 ### `(?:` `)` Non capturing Groups
-Use `(?:` `)` for non capturing groups. That is, if you need to use groups as a block but you won't process it later, then make it non-capturing
+Use `(?:` `)` for non capturing groups. That is, if you need to use groups as a block but you won't process it later, then make it non-capturing.
 
 ### Named Groups
 Use `(?<groupname>` `)` to capture a group with name `groupname`. This is useful for later processing, when input data can have different ordering.
@@ -26,10 +26,13 @@ Use `(?<groupname>` `)` to capture a group with name `groupname`. This is useful
 ```
 Name:"John" Surname:"Doe" Email:"john@example.com"
 ```
-The following regex pattern: `Name:"(?<Name>[\w]+?)".*?Surname:"(?<Surname>[\w]+?)".*?Email:"(?<Email>\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b)"`
-Will match each data and will create three Name Groups: Group 'Name' with data `John`, Group 'Surname' with data `Doe` and Group 'Email' with data `john@example.com
+The following regex pattern:
+```regex
+Name:"(?<Name>[\w]+?)".*?Surname:"(?<Surname>[\w]+?)".*?Email:"(?<Email>\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b)"
+```
+Will match each data and will create three Name Groups: Group 'Name' with data `John`, Group 'Surname' with data `Doe` and Group 'Email' with data `john@example.com`.
 
-Each language and regex engine define how to access all matched groups.
+Each language and regex engine define how to access all matched groups. Check your to learn how to iterate and process matched groups.
 
 >**Note:** There are many others types of grouping, for lookahead, lookbehind, atomic groups, conditionals, recursion,...
 All them are out of scope of this course.
