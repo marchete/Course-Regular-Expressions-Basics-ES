@@ -148,7 +148,7 @@ namespace RegexCourse
         [TestMethod]
         public void VerifyExercise3()
         {
-            string hints = @"The exercise asked for consonants, that can be matched with [a-zA-Z-[aeiouAEIOU]]. After that you need to create a character set for vowels, but only on lowercase. Finally you must create a character set with [ns]. Joining the three character sets will create the solution.";
+            string hints = @"The exercise asked for consonants, that can be matched with [a-zA-Z-[aeiouAEIOU]]. After that you need to create a character set for lowercase vowels. Finally you must create a character set with [ns]. Joining the three character sets will create the solution.";
             string RefPattern = @"[a-zA-Z-[aeiouAEIOU]][aeiou][ns]";
             string UserPattern = Exercise3.Pattern_Exercise3;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -241,20 +241,26 @@ string xml2 =
         public void VerifyExercise6()
         {
             string hints = @"<filename> part is a character set that can be repeated 1 or more times, followed by a literal dot.<Extension> part can be created as an alternation of each possible extension, just take care that each character on them must be both lowercase and uppercase [pP][nN][gG] for example.";
-            string TextPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+";
             string DrivePattern = @"(?<Drive>[a-zA-Z])";
-            string DirsPattern = @"(?<Path>(?:" + TextPattern + @"\\)*)";
+
+            string DirPattern = @"[a-zA-Z0-9\-+_=\(\)]+";
+            string DirsPattern = @"(?<Path>(?:" + DirPattern + @"\\)*)";
+
+            string TextPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+";
             string FilePattern = @"(?<Name>" + TextPattern + @"\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF]))";
+
             string RefPattern = DrivePattern+@":\\"+DirsPattern+FilePattern;
+
             string UserPattern = Exercise6.Pattern_Exercise6;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
-            regexcases.Add(new RegexUseCase("Simple image", "image.jpg"));
-            regexcases.Add(new RegexUseCase("Several images", "image1.jpg image2.jpeg image3.png image4.bmp image5.gif"));
-            regexcases.Add(new RegexUseCase("Double extension", "image.jpg.gif"));
-            regexcases.Add(new RegexUseCase("Invalid images", "image,jpg myphotos.gpeg imagejpg .gif"));
-            regexcases.Add(new RegexUseCase("Images with symbols", "image1.dot.jpg image2...+..+...gif image3.d-_-b.___.bmp image(=copy=).gif"));
-            regexcases.Add(new RegexUseCase("Mixed Uppercase", "image1.DOt.Jpg iMAge2...+..+...GIF IMAGE3.d-_-b.___.Bmp IMAGE(=copy=).gIF"));
-            regexcases.Add(new RegexUseCase("Image with path", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG"));
+            regexcases.Add(new RegexUseCase("Simple image", @"D:\image.jpg"));
+            regexcases.Add(new RegexUseCase("Several images", @"E:\image1.jpg F:\image2.Jpeg Z:\image3.PnG x:\image3.d-_-b.___.bmp V:\image(=copy=).gif"));
+            regexcases.Add(new RegexUseCase("Double extension", @"j:\image.jpg.gif"));
+            regexcases.Add(new RegexUseCase("Invalid images", @"D:\image,jpg c:\myphotos.gpeg imagejpg .gif d:\ f:\d\d\d.txt f:\a\b\.jpg"));
+            regexcases.Add(new RegexUseCase("Long path", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG"));
+            regexcases.Add(new RegexUseCase("Invalid path 1", @"C:\\Moss\Documents\Images\My_image.copy.JPG"));
+            regexcases.Add(new RegexUseCase("Invalid path 2", @"C:My_image.copy.JPG"));
+            regexcases.Add(new RegexUseCase("Invalid path 3", @"C:\..\dir\My_image.copy.JPG"));
             Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints));
         }
 

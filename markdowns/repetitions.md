@@ -12,8 +12,8 @@ You can use these sintaxis for defined ranges:
 | `{n,}` | Repeat the previous symbol `n` times or more |
 | `{min,max}` | Repeat the previous symbol between `min` and `max` times, both included |
 
-So `a{6}` it's the same as `aaaaaa`, and `[a-z]{1,3}` will match any text that has between 1 and 3 consecutive letters.
->**Note:** On repetitions each symbol match is independent. On `[a-z]{1,3}` pattern matching `a` first won't force that the second character must be an `a` too, it can be any letter from the character set.
+So `a{6}` is the same as `aaaaaa`, and `[a-z]{1,3}` will match any text that has between 1 and 3 consecutive letters.
+>**Note:** On repetitions each symbol match is independent. If `[a-z]{1,3}` first matches with 'a', on the next letter it can match with anything in [a-z] range, not only 'a'.
 
 ### Other Ranges
 
@@ -25,7 +25,7 @@ You can use these sintaxis for other types of range:
 | `+` | Repeat the previous symbol `1` times or more |
 | `?` | Repeat the previous symbol `0` or `1` times |
 
->**Note:** `*` it's the same as `{0,}`, `+` it's the same as `{1,}` and `?` it's the same as `{0,1}`
+>**Note:** `*` is the same as `{0,}`, `+` is the same as `{1,}` and `?` is the same as `{0,1}`
 
 A common use for `?` is to allow both singular and plural words: `cats?` will match either `cat` or `cats`. 
 
