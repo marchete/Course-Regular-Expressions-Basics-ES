@@ -301,7 +301,7 @@ string xml2 =
  public static string DirsPattern = @""(?<Path>(?:"" + DirPattern + @""\\)*)"";
  public static string TextPattern = @""[a-zA-Z0-9\.\-+_=\(\)]+"";
  public static string FilePattern = @""(?<Name>"" + TextPattern + @""\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])\b)"";
- public static string Pattern_Exercise6= DrivePattern+@"":\\""+DirsPattern+FilePattern;
+ public static string Pattern_Exercise6= DrivePattern + @"":\\"" + DirsPattern + FilePattern;
 ";
             string DrivePattern = @"(?<Drive>\b[a-zA-Z])";
 
