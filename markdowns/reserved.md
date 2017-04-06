@@ -3,7 +3,7 @@
 ### Literal Characters: Letters, digits and unicode
 All letters, digits and (most) unicode characters on a regex pattern are literal, so the regex engine will search exactly that pattern without any other processing.
 
-So if you search `at`, your pattern will match on these strings: "**at**","c**at**", "b**at**", "l**at**er","you need to be **at** home **at** 10".
+So if you search `at`, your pattern will match on these strings: "c**at**", "b**at**", "You were l**at**e, you need to be **at** home **at** 10".
 
 >**Remember:** Regex patterns are case sensitive, although there are ways to set it to case insensitive (it depends on the language used).
 
@@ -17,9 +17,9 @@ These are the most important (we will see all those on more detail on next lesso
 | Chars | Description |
 | ------ | ------ |
 | `.` | Any single character. |
-| <code>&#124;</code> | Or expression (one or another). |
-| `[` `]` | Character set delimitators. |
 | `(` `)` | Grouping delimitators. |
+| `[` `]` | Character set delimitators. OR at character level |
+| <code>&#124;</code> | Or expression for patterns (one or another). |
 | `{` `}` | Repetitions delimitators. |
 | `*` | Zero or more repetitions of the previous character. |
 | `+` | One or more repetitions. |
@@ -27,6 +27,8 @@ These are the most important (we will see all those on more detail on next lesso
 | `^` | Start of the string. You can use it to force a pattern to match only at start. Also it's used as negative inside character sets. |
 | `$` | End of the string. |
 | `/` | Separator. On many regex engines regex patterns must be enclosed with them |
+| `-` | Range definition. Used to define range of consecutive characters, like A-Z |
+
 | `\`  | Escape character of all reserved characters, so \\? will search the literal ?. It's also used for other special search patterns (see below).  |
 
 They are called metacharacters.
