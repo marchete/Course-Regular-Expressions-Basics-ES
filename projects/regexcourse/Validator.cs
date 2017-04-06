@@ -20,9 +20,48 @@ namespace RegexCourse
           public string Name;  
           public string Value;  
 		  public RegexUseCase(string n, string v){Name = n; Value = v;}
-        }  
+        }
 
-		public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest,string MarkerColor)
+
+        //Matching using Named Groups
+        public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest, List<string> GroupMatches)
+        {
+            string[] pen_colors = new int[] { "yellow","green","pink","blue","red","grey"};
+            string HTMLMatch = "";
+            int[] char_captured = new int[regexTest.Value.Length]; //Each group will have an index, starting from 0
+            //Set array to -1, because index starts at 0
+            for (int i = 0; i < regexTest.Value.Length; ++i)
+             {
+                char_captured[i] = -1; 
+             }
+            var matches = regex.Matches(regexTest.Value);
+            foreach (Match m in matches)
+                if (m.Success)
+                {
+                    for (int g = 0; g < GroupMatches.Count; ++g )
+                    {
+                        if (m.Groups[g].Success)
+                        for (int i = 0; i < m.Groups[g].Length; ++i)
+                        {
+                            char_captured[m.Groups[g].Index + i] = g;
+                        }
+                    }
+                }
+
+            if (char_captured[0] >= 0) HTMLMatch += "<span class='" + pen_colors[char_captured[0]] + "-highlight'>";
+            HTMLMatch += WebUtility.HtmlEncode("" + regexTest.Value[0]);
+            for (int i = 1; i < regexTest.Value.Length; ++i)
+            {
+                if (char_captured[i - 1] >= 0 && char_captured[i] != char_captured[i - 1]) HTMLMatch += "</span>";
+                if (char_captured[i - 1] != char_captured[i] && char_captured[i] >= 0) HTMLMatch += "<span class='" + pen_colors[char_captured[i]] + "-highlight'>";
+                HTMLMatch += WebUtility.HtmlEncode("" + regexTest.Value[i]);
+            }
+            if (char_captured[regexTest.Value.Length - 1] >= 0) HTMLMatch += "</span>";
+            return HTMLMatch;
+        }
+
+        //Simple Matching
+        public string CreateHTMLMatches(Regex regex, RegexUseCase regexTest,string MarkerColor)
 		{
 			string HTMLMatch = "";
             bool[] char_captured = new bool[regexTest.Value.Length];
@@ -49,6 +88,11 @@ namespace RegexCourse
 		}
 		
         public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases,string hints)
+        {
+            return VerifyMatches(ReportName, Title_Report, RefPattern, UserPattern, regexcases, hints, new List<string>());
+        }
+
+        public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases,string hints,List<string> GroupMatches)
         {
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
@@ -77,11 +121,21 @@ namespace RegexCourse
 			foreach (var regexTest in regexcases)
 			{
 			  string User_char_captured ;
-              string Ref_char_captured = CreateHTMLMatches(Refregex, regexTest, "green");
-              if (UserInvalidPattern)
-                   User_char_captured = "Error, Invalid Regex Pattern";
-              else User_char_captured = CreateHTMLMatches(Userregex, regexTest, "yellow");
-              bool isCorrect = (Ref_char_captured == User_char_captured.Replace("class='yellow-highlight","class='green-highlight"));
+              string Ref_char_captured;
+                
+                if (GroupMatches.Count > 0)
+                     Ref_char_captured = CreateHTMLMatches(Refregex, regexTest, GroupMatches);
+                else Ref_char_captured = CreateHTMLMatches(Refregex, regexTest, "green");
+
+                if (UserInvalidPattern)
+                    User_char_captured = "Error, Invalid Regex Pattern";
+                else
+                {
+                    if (GroupMatches.Count > 0)
+                         User_char_captured = CreateHTMLMatches(Userregex, regexTest, GroupMatches);
+                    else User_char_captured = CreateHTMLMatches(Userregex, regexTest, "yellow");
+                }
+                bool isCorrect = (GroupMatches.Count > 0 ? Ref_char_captured == User_char_captured : (Ref_char_captured == User_char_captured.Replace("class='yellow-highlight", "class='green-highlight")));
               if (isCorrect) ++countCorrect;
 			  UnitTestOK = UnitTestOK && isCorrect;
               rowreport += RowReport.Replace("%name%", WebUtility.HtmlEncode(regexTest.Name)).Replace("%ok1%", (isCorrect ? "ok" : "remove")).Replace("%ok2%", (isCorrect ? "success" : "danger"))
@@ -252,6 +306,9 @@ string xml2 =
             string RefPattern = DrivePattern+@":\\"+DirsPattern+FilePattern;
 
             string UserPattern = Exercise6.Pattern_Exercise6;
+
+            List<string> GroupMatches = new List<string>() { "Drive","Path","Name"};
+
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
             regexcases.Add(new RegexUseCase("Simple image", @"D:\image.jpg"));
             regexcases.Add(new RegexUseCase("Several images", @"E:\image1.jpg F:\image2.Jpeg Z:\image3.PnG x:\image3.d-_-b.___.bmp V:\image(=copy=).gif"));
@@ -261,7 +318,7 @@ string xml2 =
             regexcases.Add(new RegexUseCase("Invalid path 1", @"C:\\Moss\Documents\Images\My_image.copy.JPG"));
             regexcases.Add(new RegexUseCase("Invalid path 2", @"C:My_image.copy.JPG"));
             regexcases.Add(new RegexUseCase("Invalid path 3", @"C:\..\dir\My_image.copy.JPG"));
-            Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints));
+            Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints, GroupMatches));
         }
 
         [TestMethod]
