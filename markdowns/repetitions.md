@@ -4,7 +4,7 @@ Repetitions simplifies using the same pattern several consecutive times. It also
 
 ### `{` `}` Ranges
 
-You can use these sintaxis for defined ranges:
+You can use these syntaxes for defined ranges:
 
 | Pattern | Description |
 | ------ | ------ |
@@ -17,7 +17,7 @@ So `a{6}` is the same as `aaaaaa`, and `[a-z]{1,3}` will match any text that has
 
 ### Other Ranges
 
-You can use these sintaxis for other types of range:
+You can use these syntaxes for other types of range:
 
 | Pattern | Description |
 | ------ | ------ |

@@ -15,7 +15,7 @@ Name:"John" Surname:"Doe" Email:"john@example.com"
 As you imagine, if you need to process that file you don't need the Name:" part, you just need the data.
 So you can use a pattern like that: `Name:"([\w]+?)"` to capture just the useful data, but using the `Name:"` as a reference for searching the data.
 
->**Note:** If you apply a repetition to a group, only the last match of the repetition is stored. `([\w])+?` will only give you the last matched characted, whereas `([\w]+?)` group have the repetition inside, so it will give you all matched characters.
+>**Note:** If you apply a repetition to a group, only the last match of the repetition is stored. `([\w])+?` will only give you the last matched character, whereas `([\w]+?)` group have the repetition inside, so it will give you all matched characters.
 
 ### `(?:` `)` Non capturing Groups
 Use `(?:` `)` for non capturing groups. That is, if you need to use groups as a block but you won't process it later, then make it non-capturing.
