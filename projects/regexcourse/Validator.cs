@@ -212,7 +212,7 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("Simple set", "This is an example for capturing regex matches"));
             regexcases.Add(new RegexUseCase("Matches", "Mask mask can send. Test then senseless foxes troubles"));
             regexcases.Add(new RegexUseCase("Matches II", "Ban ben Cis cos Dun das Fen fin Gos gun Has hen Jin jos Kun kas Lun les Mis man Nun nas Pos pun Qes qus Run res Sun sas Ten tan Von van Was wen Xin xan Zen zas"));
-            regexcases.Add(new RegexUseCase("No Matches", "MAsk MaSk sEnd TEST"));
+            regexcases.Add(new RegexUseCase("No Matches", "MAsk MaSk sEnd TEST *as 9as 8AS -EN ?uN"));
             regexcases.Add(new RegexUseCase("No Matches II", "BAn bEn CIs coS DuN dAS FeN fIN GOs gUn HaS heN JiN jOS KUn kAs LuN lEs MIs mAn NUN nAS POS pUn QEs qUs RUn rES SuN sAS TEn taN VoN vAN WAS wEN XIn xAN ZeN zaS"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet , consectetur adipiscing elit."));
             Assert.IsTrue(VerifyMatches("exercise3.html", "Exercise 3 - Complex sets", RefPattern, UserPattern, regexcases, hints));

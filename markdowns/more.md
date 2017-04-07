@@ -23,7 +23,7 @@ Regular Expressions has good characteristics for text searching, but it also has
 
 In my opinion Regular Expressions is a must have for anybody that works on IT related stuff (programming, databases, OS, etc.). One day or another you'll face a problem where you need to process text streams, searching some data based on patterns. In these tasks is where Regular Expressions excels.
 
-** Codingame Puzzles **
+### Codingame Puzzles
 There are many Codingame puzzles where you can use Regular Expressions:
 
 -  https://www.codingame.com/training/community/brackets-extreme-edition Using regex to replace some brackets
@@ -37,7 +37,7 @@ There are many Codingame puzzles where you can use Regular Expressions:
 
 And the list goes on and on.
 
-** Other interesting links **
+### Other interesting links
 -  https://regex101.com/ Online regex tester. One of the best on the net.
 -  http://www.regexpal.com/ Online regex tester.
 -  http://www.rexegg.com/ So much information about Regular Expressions that you'll hate regex with all your heart.
