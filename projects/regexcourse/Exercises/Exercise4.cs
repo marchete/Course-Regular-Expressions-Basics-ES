@@ -8,10 +8,10 @@ namespace RegexCourse{
 		//  -These symbols: = \s " - _ :
 		
 		//Your regex pattern should not match the characters between XML tags.
-		//I.e: On <text>ZZZZZ</text> XML, the text ZZZZZ shouldn't match.
-		//Tags starting with <? should NOT match, as ? is not inside allowed symbols
-		//Note: On literal C# strings, " symbol must be escaped as double ""
-		// Also, on C# you need to escape / with \/
+		//I.e: In the XML <text>ZZZZZ</text>, the text ZZZZZ shouldn't be matched.
+		//Tags starting with <? should NOT match, as ? is not in the set of allowed symbols
+		//Note: In literal C# strings, the " symbol must be escaped as double ""
+		// Also, in C# you need to escape / with \/
 		
         public static string Pattern_Exercise4=@"";
     }

@@ -21,7 +21,7 @@ namespace RegexCourse{
 		
 		public static string Pattern_Exercise6=@"";
 		/*
-   		    //Another option, as combination of subpatterns
+   		    //Another option, as a combination of subpatterns
 		    public static string DrivePattern = @""; //(?<Drive>...
 
             public static string DirPattern = @""; //To match text of each directory

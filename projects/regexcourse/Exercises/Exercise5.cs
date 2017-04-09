@@ -1,6 +1,6 @@
 namespace RegexCourse{
     public static class Exercise5{
-		//Search image files.
+		//Search for image files.
 		//Files are composed as follows:
 		//filename.extension
 		//"filename" is formed as one or more of the following characters:
@@ -9,7 +9,7 @@ namespace RegexCourse{
 		//Valid "extension" for images are:
 		// jpg,jpeg,png,bmp,gif
 		
-		//The filesystem is case insensitive, so filename and extension can be on any case.
+		//The filesystem is case insensitive, so filename and extension can be any case.
         public static string Pattern_Exercise5=@"";
     }
 }

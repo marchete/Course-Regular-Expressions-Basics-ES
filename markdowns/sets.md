@@ -1,26 +1,26 @@
 # Character Sets
 
 ### Simple character set
-On previous lessons we learned that a regex made from literal characters like `ain` will search exactly those 3 letters in that exact order.
-It's like to search a & i & n. But what if I need an | (OR) instead of & (AND)?
+In previous lessons we learned that a regex made from literal characters, like `ain`, will search exactly those 3 letters in that exact order.
+It's essentially a search for **a & i & n**. But what if I need an | (OR) instead of an & (AND)?
 
-That's why you have the `[` `]`. When you create a pattern like `[ain]` you'll search for a single character that must be either `a` OR `i` OR `n`
+That's why you have the `[` `]`. When you create a pattern like `[ain]`, you'll search for a single character that must be either `a` OR `i` OR `n`.
 
-On this first exercise you'll need to create a pattern to match vowels, and then run the code.
+In this first exercise, you'll need to create a pattern to match vowels, and then run the code.
 @[Exercise 1 - Create a pattern to match vowels ]({"stubs": ["Exercises/Exercise1.cs"],"command": "RegexCourse.Validator.VerifyExercise1"})
 
 ### Range character set
-A simple character set can be bothersome to declare when you need to match the whole alphabet, or digits.
-For that reason on Regular Expressions you can use `-` to declare ranges of consecutive characters.
-Using the pattern `[a-z]` you'll match any character from a to z (a,b,c,d,e....x,y or z), `[2-5]` will match any number from 2 to 5.
-You can also combine several ranges inside the character set, `[B-Ga-v]` is valid.
-As stated before, regex patterns are case sensitive, `[a-z]` and `[A-Z]` matches differently.
+A simple character set can be bothersome to declare when you need to match the whole alphabet, or all digits.
+For that reason, you can use `-` in Regular Expressions to declare ranges of consecutive characters.
+Using the pattern `[a-z]`, you'll match any character from a to z (a,b,c,d,e....x,y or z), `[2-5]` will match any number from 2 to 5.
+You can also combine several ranges inside the character set. `[B-Ga-v]` is valid.
+As stated before, regex patterns are case sensitive, `[a-z]` and `[A-Z]` match differently.
 
-There is a special case with the `^` metacharacter, that create a negative match. `[^2-5]` will match with any character except 2,3,4 and 5. But take care because that doesn't mean it just matches with 0,1,6,7,8 or 9, it matches with any other character, even letters and symbols.
+The `^` metacharacter is a special case. When used inside of `[` `]`, that character creates a negative match. `[^2-5]` will match with any character **except** 2,3,4 and 5. But take care because that doesn't mean it just matches with 0,1,6,7,8 or 9. It matches with **any** other character, even letters and symbols.
 
 Some regex engines (check your language first) support character set substractions and intersections.
-- Substractions are usually defined as `[range-[subrange_to_remove]]`, like `[0-9-[2-7]]` to have a set that matches only 0,1,8 or 9.
-- Intersections are defined as `[range1&&range2]`. The character must belong to both ranges to be used on the search.
+- Substractions are usually defined as `[range-[subrange_to_remove]]`, like `[0-9-[2-7]]` indicating a set that matches only 0,1,8 or 9.
+- Intersections are defined as `[range1&&range2]`. The character must belong to both ranges to be matched in the search.
 
 >**Note:** Remember `\w` from the previous lesson? It's shorthand for `[a-zA-Z0-9_]`
 
