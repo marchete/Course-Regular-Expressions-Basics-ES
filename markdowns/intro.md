@@ -1,7 +1,7 @@
 # Introduction
 A regular expression (or the acronym "regex") is a pattern that allows for complex text searches.
 
-![RR](/images/rr.png)
+
 Imagine you need to search for email addresses in a given text. An email address has a complex structure: it has an account part, the @ sign and the domain name part, and each part has it's own restrictions. 
 ![Email structure](/images/email.png)
 
@@ -9,7 +9,11 @@ This is a hard task to do if you try to program it as usual, with loops, simple 
 
 Instead of that, let's try to search for email addresses with a regular expression.
 
-Here is an example Regex that matches email addresses:`\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b`
+Here is an example Regex that matches email addresses:
+
+![RR](/images/rr.png)
+
+`\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b`
 
 
 
