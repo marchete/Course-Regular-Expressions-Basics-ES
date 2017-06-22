@@ -37,7 +37,6 @@ These special characters are called metacharacters.
 
 
 ### Other metacharacters
-The symbol `\` can precede any metacharacter to escape it, but it can be combined with certain letters creating new metacharacters:
 
 | Pattern | Description |
 | ------ | ------ |
@@ -54,6 +53,12 @@ The symbol `\` can precede any metacharacter to escape it, but it can be combine
 | `\S` | Just the opposite of the previous metacharacter. |
 
 >**Note:** There are many other patterns using `\`, but these are the most important.
+
+### Backslash
+
+Using backslash outside of the previously defined metacharacters will escape the following character. The regex engine will then consider this character as a simple literal. This means, according to the table above, `*` is a quantifier, but if you need to match the character `*` in a string, `\*` means "the character `*`".
+
+Furthermore, the `\` can escape itself if you need to match a backslash character. You can use `\\` to match backslash.
 
 ### Search flags and modifiers
 Most regex engines have some flags to change the search behaviour.

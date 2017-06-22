@@ -32,6 +32,9 @@ A common use for `?` is to allow both singular and plural words: `cats?` will ma
 Repetitions are greedy on searches, they try to get the largest match possible. Sometimes that's undesired. You can force a lazy search by adding `?` after `*` or `+`.
 The `?` instructs the regex engine to make a lazy search, which gives the smallest match possible.
 
+Greedy Search: `a.*a` will find ![Greedy Search](/images/greedy.png)
+Lazy Search: `a.*?a` will find ![Lazy Search](/images/greedy.png)
+
 @[Exercise 4 - Simplified XML Tags ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
 
 >**Note:** Regex is not recommended for parsing XML or HTML. See: http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags 

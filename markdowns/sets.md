@@ -27,6 +27,9 @@ Some regex engines (check your language first) support character set substractio
 @[Exercise 2 - Searching years from 2000 to 2199 ]({"stubs": ["Exercises/Exercise2.cs"],"command": "RegexCourse.Validator.VerifyExercise2"})
 Regex is especially bad when searching numeric ranges. There is no easy way to create a regex pattern for arbitrary ranges (i.e. numbers from 733 to 8586)
 
-@[Exercise 3 - Complex pattern sets ]({"stubs": ["Exercises/Exercise3.cs"],"command": "RegexCourse.Validator.VerifyExercise3"})
+On the next exercise you need to create a complex pattern set with the following constraints:
+- Search for any consonant, then a lowercase vowel, then either the letter 'n' or 's'.
+
+@[Exercise 3 - Complex pattern set ]({"stubs": ["Exercises/Exercise3.cs"],"command": "RegexCourse.Validator.VerifyExercise3"})
 
 Continue to the next lesson to learn about Repetitions in Regular Expressions.

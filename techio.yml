@@ -1,5 +1,7 @@
 title : Regular Expressions Basics
 plan:
+  - title: "About Regular Expressions Playground"
+    statement: markdowns/about.md
   - title: Introduction
     statement: markdowns/intro.md
   - title: "Reserved Characters"
@@ -18,5 +20,5 @@ projects:
     regexcourse:
         root: /projects/regexcourse
         runner:
-            name: codingame/dotnet-runner
+            name: techio/dotnet-runner
             version: 1.1.0-dotnet-1.1-sdk-msbuild

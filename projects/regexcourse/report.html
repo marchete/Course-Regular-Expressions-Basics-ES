@@ -38,11 +38,29 @@ $(document).ready(function(){
 <body>
 <!--<h1>%REPORT_NAME%</h1>-->
 <div class="gauge">
-<canvas id="canvas" width="200" height="200">%percent%%</canvas>
+<canvas id="canvas" width="300" height="300">%percent%%</canvas>
 </div>
 
+<!-- Solutions -->
+  <div class="modal fade" id="Solution" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Solution for the exercise</h4>
+        </div>
+        <div class="modal-body">
+           %sol%
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
  <button id="show_res" type="button" style="margin-left: 15px;" class="btn btn-%globalresult%">View Validators</button>
+ <button id="show_sol" type="button" style="margin-right: 15px;" data-toggle="modal" data-target="#Solution" class="btn pull-right btn-success"><span class="glyphicon glyphicon-ok"  ></span> Show me the Solution!</button>
  <button id="show_hints" type="button" style="margin-right: 15px;" data-toggle="popover" data-placement="left" data-content="%hints%" class="btn pull-right btn-primary"><span class="glyphicon glyphicon-info-sign"  ></span> Hints</button>
 <div id="tableres"  class="exercise-results container-fluid">
         <table  class="table table-responsive">
@@ -65,6 +83,7 @@ $(document).ready(function(){
 window.onload = function(){
     var percentage = %percent%;
     if (percentage == 100) $("#tableres").hide();
+	if (percentage == 101) percentage = 100; //Tweak to always show matches on Examples
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
 	var W = canvas.width;

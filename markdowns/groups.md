@@ -12,8 +12,7 @@ This is useful when you want to extract only a portion of the search. Imagine th
 ```
 Name:"John" Surname:"Doe" Email:"john@example.com"
 ```
-As you may imagine, if you need to process that file you don't need the Name:" part. You just need the data.
-So you can use a pattern like this: `Name:"([\w]+?)"` to capture just the useful data, using the `Name:"` as a reference for locating the data within the text.
+If you need to extract the value of the `Name` part (which is `John` in the example), you can use a pattern like this: `Name:"([\w]+?)"` to capture just the useful data, using the `Name:"` as a reference for locating the data within the text.
 
 >**Note:** If you apply a repetition to a group, only the last match of the repetition is stored. `([\w])+?` will only give you the last matched character, whereas the `([\w]+?)` group has the repetition inside, so it will give you all matched characters.
 

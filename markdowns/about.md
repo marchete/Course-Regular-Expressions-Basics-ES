@@ -9,7 +9,7 @@ You don't need any prior C# knowledge to complete the Course.
 ## Difficulty Level: 
 Intermediate.
 ## Estimated Time:
-40 minutes.
+60 minutes.
 ## What will I learn?
 Students will learn the most important features of Regular Expressions:
  Reserved characters in Regex, repetitions, alternations and capturing groups.
