@@ -233,9 +233,9 @@ namespace RegexCourse
 @"namespace RegexCourse{
     public static class Exercise3{
 		//Write a regex pattern to match a pattern that matches:
-        //	Any consonant, then a lowercase vowel, then either the letter 'n' or 's'.
-		//In this exercise ""y"" and ""Y"" are considered consonants.
-		//Note: C# allows character sets substractions
+        //	Any consonant, then a lowercase vowel, then either the letter n or s.
+		//In this exercise y and Y are considered consonants.
+		//Note: C sharp allows character sets substractions
         public static string Pattern_Exercise3=@""[A-Za-z-[AEIOUaeiou]][aeiou][ns]"";
     }
 }";
@@ -258,6 +258,8 @@ namespace RegexCourse
 			string sol=
 @"namespace RegexCourse{
     public static class Exercise4{
+		//Write a regex pattern to match simplified XML tags.
+        //Simplified XML tags will be defined as <text> or </text>		
         public static string Pattern_Exercise4=@""<\/?[a-zA-Z0-9=\s\-""""_:]+?>"";
     }
 }";
