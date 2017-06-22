@@ -145,7 +145,7 @@ namespace RegexCourse
               rowreport += RowReport.Replace("%name%", WebUtility.HtmlEncode(regexTest.Name)).Replace("%ok1%", (isCorrect ? "ok" : "remove")).Replace("%ok2%", (isCorrect ? "success" : "danger"))
 			                        .Replace("%match1%",User_char_captured).Replace("%match2%",Ref_char_captured)+"\r\n";
 			}
-            percentage = 100 * countCorrect / regexcases.Count;
+            percentage = Math.Max(0,100 * countCorrect / Math.Max(0,regexcases.Count));
             if (countCorrect == regexcases.Count)
                 contents = contents.Replace("%globalresult%", "success");  //100% Score Green Button
             else if (percentage < 16)
@@ -174,7 +174,7 @@ namespace RegexCourse
 @"namespace RegexCourse{
     public static class Exercise1{
 		//Write a regex pattern to match any vowel, both lowercase and uppercase
-		//""Y"" or ""y"" aren't considered vowels in this exercise
+		//Y or y aren't considered vowels in this exercise
         public static string Pattern_MatchVowels=@""[aeiouAEIOU]"";
     }
 }";
@@ -429,17 +429,7 @@ string sol=
         public void VerifyExample1()
         {
             string hints = "On this button you'll get hints for solving each exercise.";
-			string sol = 
-@"namespace RegexCourse{
-    public static class Example1{
-    }
-}";
-/*
-		//Email validator pattern. The string starts with @"" because that's the way literal strings
-		// are defined in C#, otherwise C# will treat the character \ differently inside the string
-        public static string Pattern_Email=@""\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"";
-		//Please note that there are other regex patterns more accurate to RFC 822, but more complex too
-*/
+			string sol = @"You'll see the solutions for each exercise here";
             string RefPattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b";
             string UserPattern = Example1.Pattern_Email;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
