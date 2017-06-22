@@ -160,7 +160,7 @@ namespace RegexCourse
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
             Console.WriteLine("TECHIO> message Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length+" Unit Test Result is:"+UnitTestOK);
-			Console.WriteLine("TECHIO> message contents");
+			Console.WriteLine("TECHIO> message "+contents);
             Console.WriteLine("TECHIO> message -channel \"exercise results\" Solved: " + countCorrect + "/" + regexcases.Count + " (" + percentage + "%)");	
             Console.WriteLine("TECHIO> open --static-dir "+ReportPath+" /" + ReportName);
 			Console.WriteLine("TECHIO> message Exiting");
