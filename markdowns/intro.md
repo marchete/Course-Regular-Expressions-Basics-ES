@@ -9,13 +9,9 @@ This is a hard task to do if you try to program it as usual, with loops, simple 
 
 Instead of that, let's try to search for email addresses with a regular expression.
 
-Here is an example Regex that matches email addresses:`\b[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b`
+Here is an example Regex that matches email addresses:
 
-![RR](/images/rr.png)
-
-
-
-
+![Email Regex](/images/emailregex.png)
 
 Everything that is before the `@` is the `Email ID`, and everything after the `@` is the `Email Domain Name`.
 
