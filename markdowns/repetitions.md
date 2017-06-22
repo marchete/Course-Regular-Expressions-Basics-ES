@@ -33,7 +33,7 @@ Repetitions are greedy on searches, they try to get the largest match possible. 
 The `?` instructs the regex engine to make a lazy search, which gives the smallest match possible.
 
 Greedy Search: `a.*a` will find ![Greedy Search](/images/greedy.png)
-Lazy Search: `a.*?a` will find ![Lazy Search](/images/greedy.png)
+Lazy Search: `a.*?a` will find ![Lazy Search](/images/lazy.png)
 
 @[Exercise 4 - Simplified XML Tags ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
 
