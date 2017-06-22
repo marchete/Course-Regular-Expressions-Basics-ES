@@ -113,7 +113,7 @@ namespace RegexCourse
             catch (ArgumentException ex) 
             {
                 UserInvalidPattern = true;
-                Console.WriteLine("CG> message -c err INCORRECT REGEX: '"+ex.Message+"'");
+                Console.WriteLine("TECHIO> message -c err INCORRECT REGEX: '"+ex.Message+"'");
             }
 			string contents = File.ReadAllText(ReportTemplate);
 
@@ -159,11 +159,11 @@ namespace RegexCourse
             else contents = contents.Replace("%percent%", "" + percentage); //Set percentage
 			contents = contents.Replace("%report_body%",rowreport);
 			File.WriteAllText (path, contents);
-            Console.WriteLine("CG> message Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length+" Unit Test Result is:"+UnitTestOK);
-            Console.WriteLine("CG> message -channel \"exercise results\" Solved: " + countCorrect + "/" + regexcases.Count + " (" + percentage + "%)");
-			Console.WriteLine("CG> message "+contents);
-            Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
-			Console.WriteLine("CG> message Exiting");
+            Console.WriteLine("TECHIO> message Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length+" Unit Test Result is:"+UnitTestOK);
+            Console.WriteLine("TECHIO> message -channel \"exercise results\" Solved: " + countCorrect + "/" + regexcases.Count + " (" + percentage + "%)");
+			Console.WriteLine("TECHIO> message -channel \"user debug\" "+contents);
+            Console.WriteLine("TECHIO> open --static-dir "+ReportPath+" /" + ReportName);
+			Console.WriteLine("TECHIO> message Exiting");
 			return UnitTestOK;
         }
 
