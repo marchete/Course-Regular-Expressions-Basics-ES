@@ -1,4 +1,5 @@
 title : Regular Expressions Basics
+cover: /images/cover.png
 plan:
   - title: "About Regular Expressions Playground"
     statement: markdowns/about.md
