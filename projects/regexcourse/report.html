@@ -126,7 +126,7 @@ window.onload = function(){
 	{
 		if(typeof animation_loop != undefined) clearInterval(animation_loop);
 		new_degrees = Math.round((percentage+1)*3.60);
-		difference = new_degrees - degrees;
+		difference = Math.abs(new_degrees - degrees);
 		animation_loop = setInterval(animate_to, 500/difference);
 	}
 	

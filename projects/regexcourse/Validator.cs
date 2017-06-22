@@ -162,6 +162,7 @@ namespace RegexCourse
             Console.WriteLine("CG> message Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length);
             Console.WriteLine("CG> message -channel \"exercise results\" Solved: " + countCorrect + "/" + regexcases.Count + " (" + percentage + "%)");
             Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
+			Console.WriteLine(contents);
 			return UnitTestOK;
         }
 
