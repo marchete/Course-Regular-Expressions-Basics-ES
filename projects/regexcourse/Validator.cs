@@ -161,8 +161,8 @@ namespace RegexCourse
 			File.WriteAllText (path, contents);
             Console.WriteLine("CG> message Report is:" + path + " Size:" + new System.IO.FileInfo(path).Length);
             Console.WriteLine("CG> message -channel \"exercise results\" Solved: " + countCorrect + "/" + regexcases.Count + " (" + percentage + "%)");
-            Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);
-			Console.WriteLine(contents);
+			Console.WriteLine("CG> message "contents);
+            Console.WriteLine("CG> open --static-dir "+ReportPath+" /" + ReportName);			
 			return UnitTestOK;
         }
 
