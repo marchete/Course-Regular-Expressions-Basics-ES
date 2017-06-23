@@ -180,6 +180,8 @@ namespace RegexCourse
         public static string Pattern_MatchVowels=@""[aeiouAEIOU]"";
     }
 }";
+
+
             File.WriteAllText (Path.Combine(ReportPath,"sol_ex1.txt"),"<pre><code class=\"language-csharp\">"+WebUtility.HtmlEncode(sol)+"</code></pre>");
 		 
             string RefPattern = @"[aeiouAEIOU]";
