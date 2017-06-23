@@ -11,6 +11,7 @@ $(document).ready(function(){
     $("#show_res").click(function(){
         $("#tableres").slideToggle("slow");
     });
+	$("#show_sol").load("%solFile%");
 });
 </script>
 
@@ -49,9 +50,7 @@ $(document).ready(function(){
         <div class="modal-header">
           <h4 class="modal-title">Solution for the exercise</h4>
         </div>
-        <div class="modal-body">
-           %sol%
-        </div>
+        <div class="modal-body" id="show_sol"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>

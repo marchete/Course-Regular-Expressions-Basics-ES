@@ -95,7 +95,7 @@ namespace RegexCourse
             return VerifyMatches(ReportName, Title_Report, RefPattern, UserPattern, regexcases, hints,sol, new List<string>());
         }
 
-        public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases,string hints,string sol,List<string> GroupMatches)
+        public bool VerifyMatches(string ReportName,string Title_Report,string RefPattern, string UserPattern, List<RegexUseCase> regexcases,string hints,string solFile,List<string> GroupMatches)
         {
 			bool UnitTestOK = true;			
 			string path = Path.Combine(ReportPath,ReportName);
@@ -119,7 +119,7 @@ namespace RegexCourse
 
             contents = contents.Replace("%REPORT_NAME%", WebUtility.HtmlEncode(Title_Report)); //Set Title
             contents = contents.Replace("%hints%", WebUtility.HtmlEncode(hints)); 
-			contents = contents.Replace("%sol%", "<pre>"+WebUtility.HtmlEncode(sol)+"</pre>"); 
+			contents = contents.Replace("%solFile%", solFile); 
 			
 			string rowreport = "";
 			foreach (var regexTest in regexcases)
@@ -167,7 +167,7 @@ namespace RegexCourse
 			return UnitTestOK;
         }
 
-
+		
         [TestMethod]
         public void VerifyExercise1()
         {
@@ -180,6 +180,8 @@ namespace RegexCourse
         public static string Pattern_MatchVowels=@""[aeiouAEIOU]"";
     }
 }";
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex1.txt"),sol);
+		 
             string RefPattern = @"[aeiouAEIOU]";
 			string UserPattern = Exercise1.Pattern_MatchVowels;
 			List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -197,7 +199,7 @@ namespace RegexCourse
 			regexcases.Add( new RegexUseCase("Consonants","bCdFgHjKlMnPqRsTvWxYz"));
 			regexcases.Add( new RegexUseCase("Alphabet","AbCdEfGhIjKlMnOpQrStUvWxYz"));
 			regexcases.Add( new RegexUseCase("Lorem Ipsum","Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
-			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases,hints,sol));
+			Assert.IsTrue(VerifyMatches("exercise1.html","Exercise 1 - Match vowels",RefPattern,UserPattern,regexcases,hints,"sol_ex1.txt"));
         }
 
 
@@ -214,6 +216,7 @@ namespace RegexCourse
         public static string Pattern_Exercise2=@""\b2[01]\d\d\b"";
     }
 }";
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex2.txt"),sol);
             string RefPattern = @"\b2[0-1][0-9][0-9]\b";
             string UserPattern = Exercise2.Pattern_Exercise2;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -223,7 +226,7 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("Numbers", "01235467689"));
             regexcases.Add(new RegexUseCase("IT Crowd 😁", "118 999 881 999 119 725...3"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet 2122,1983 consectetur adipiscing elit."));
-            Assert.IsTrue(VerifyMatches("exercise2.html", "Exercise 2 - Searching years", RefPattern, UserPattern, regexcases, hints,sol));
+            Assert.IsTrue(VerifyMatches("exercise2.html", "Exercise 2 - Searching years", RefPattern, UserPattern, regexcases, hints,"sol_ex2.txt"));
         }
 
 
@@ -241,6 +244,7 @@ namespace RegexCourse
         public static string Pattern_Exercise3=@""[A-Za-z-[AEIOUaeiou]][aeiou][ns]"";
     }
 }";
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex3.txt"),sol);
             string RefPattern = @"[a-zA-Z-[aeiouAEIOU]][aeiou][ns]";
             string UserPattern = Exercise3.Pattern_Exercise3;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -250,7 +254,7 @@ namespace RegexCourse
             regexcases.Add(new RegexUseCase("No Matches", "MAsk MaSk sEnd TEST *as 9as 8AS -EN ?uN"));
             regexcases.Add(new RegexUseCase("No Matches II", "BAn bEn CIs coS DuN dAS FeN fIN GOs gUn HaS heN JiN jOS KUn kAs LuN lEs MIs mAn NUN nAS POS pUn QEs qUs RUn rES SuN sAS TEn taN VoN vAN WAS wEN XIn xAN ZeN zaS"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet , consectetur adipiscing elit."));
-            Assert.IsTrue(VerifyMatches("exercise3.html", "Exercise 3 - Complex sets", RefPattern, UserPattern, regexcases, hints,sol));
+            Assert.IsTrue(VerifyMatches("exercise3.html", "Exercise 3 - Complex sets", RefPattern, UserPattern, regexcases, hints,"sol_ex3.txt"));
         }
 
         [TestMethod]
@@ -265,6 +269,7 @@ namespace RegexCourse
         public static string Pattern_Exercise4=@""<\/?[a-zA-Z0-9=\s\-""""_:]+?>"";
     }
 }";
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex4.txt"),sol);
             string RefPattern = @"<\/?[a-zA-Z0-9=\s""\-_:]+?>";
             string UserPattern = Exercise4.Pattern_Exercise4;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -316,7 +321,7 @@ string xml2 =
  </cookbook>";
             regexcases.Add(new RegexUseCase("XML File 1", xml2));
             regexcases.Add(new RegexUseCase("XML File 2", xml1));
-            Assert.IsTrue(VerifyMatches("exercise4.html", "Exercise 4 - XML Tags", RefPattern, UserPattern, regexcases, hints,sol));
+            Assert.IsTrue(VerifyMatches("exercise4.html", "Exercise 4 - XML Tags", RefPattern, UserPattern, regexcases, hints,"sol_ex4.txt"));
         }
 
 
@@ -340,6 +345,7 @@ string xml2 =
         public static string Pattern_Exercise5=@""[\w\.+_\-=\(\)]+\.([jJ][pP][eE]?[gG]|[gG][Ii][Ff]|[pP][nN][Gg]|[bB][mM][Pp])"";
     }
 }";
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex5.txt"),sol);
             string RefPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+\.([jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])";
             string UserPattern = Exercise5.Pattern_Exercise5;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -350,7 +356,7 @@ string xml2 =
             regexcases.Add(new RegexUseCase("Images with symbols", "image1.dot.jpg image2...+..+...gif image3.d-_-b.___.bmp image(=copy=).gif"));
             regexcases.Add(new RegexUseCase("Mixed Uppercase", "image1.DOt.Jpg iMAge2...+..+...GIF IMAGE3.d-_-b.___.Bmp IMAGE(=copy=).gIF"));
             regexcases.Add(new RegexUseCase("Image with path", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG"));
-            Assert.IsTrue(VerifyMatches("exercise5.html", "Exercise 5 - Image files", RefPattern, UserPattern, regexcases, hints,sol));
+            Assert.IsTrue(VerifyMatches("exercise5.html", "Exercise 5 - Image files", RefPattern, UserPattern, regexcases, hints,"sol_ex5.txt"));
         }
 
         [TestMethod]
@@ -402,16 +408,13 @@ string sol=
 		
     }
 }";
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex6.txt"),sol);
             string DrivePattern = @"(?<Drive>\b[a-zA-Z])";
-
             string DirPattern = @"[a-zA-Z0-9\-+_=\(\)]+";
             string DirsPattern = @"(?<Path>(?:" + DirPattern + @"\\)*)";
-
             string TextPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+";
             string FilePattern = @"(?<Name>" + TextPattern + @"\.(?:[jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])\b)";
-
             string RefPattern = DrivePattern+@":\\"+DirsPattern+FilePattern;
-
             string UserPattern = Exercise6.Pattern_Exercise6;
 
             List<string> GroupMatches = new List<string>() { "Drive","Path","Name"};
@@ -426,7 +429,7 @@ string sol=
             regexcases.Add(new RegexUseCase("Invalid path 2", @"C:My_image.copy.JPG"));
             regexcases.Add(new RegexUseCase("Invalid path 3", @"C:\..\dir\My_image.copy.JPG C:\?\$\My_image.copy.JPG"));
             regexcases.Add(new RegexUseCase("Multiple files", @"C:\Users\Moss\Documents\Images\My_image.copy.JPG C:\01\02\03\04\05+06\Picture.copy.JpG X:\++\--\__\==\==+-+-.jpg"));
-            Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints,sol, GroupMatches));
+            Assert.IsTrue(VerifyMatches("exercise6.html", "Exercise 6 - Image files with Path", RefPattern, UserPattern, regexcases, hints,"sol_ex6.txt", GroupMatches));
         }
 
         [TestMethod]
@@ -434,6 +437,7 @@ string sol=
         {
             string hints = "On this button you'll get hints for solving each exercise.";
 			string sol = @"You'll see the solutions for each exercise here";
+			File.WriteAllText (Path.Combine(ReportPath,"sol_example1.txt"),sol);
             string RefPattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b";
             string UserPattern = Example1.Pattern_Email;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -448,19 +452,15 @@ string sol=
             regexcases.Add(new RegexUseCase("Invalid Email 4", "This@is not an email address at all"));
             regexcases.Add(new RegexUseCase("Invalid Email 5", "452345I31234"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
-            Assert.IsTrue(VerifyMatches("example1.html", "Example 1 - Email pattern", RefPattern, UserPattern, regexcases,hints,sol));
+            Assert.IsTrue(VerifyMatches("example1.html", "Example 1 - Email pattern", RefPattern, UserPattern, regexcases,hints,"sol_example1.txt"));
         }
 
         [TestMethod]
         public void VerifyExample2()
         {
             string hints = "On this button you'll get hints for solving each exercise.";
-			string sol =
-@"namespace RegexCourse{
-    public static class Example2{
-        public static string Pattern_Example2=@""ain"";
-    }
-}";
+			string sol = @"You'll see the solutions for each exercise here";
+			File.WriteAllText (Path.Combine(ReportPath,"sol_example2.txt"),sol);
             string RefPattern = @"ain";
             string UserPattern = Example2.Pattern_Example2;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -470,7 +470,7 @@ string sol=
             regexcases.Add(new RegexUseCase("Random Sentence 1", "Again he is talking about Genetic Algorithm in CSB!"));
             regexcases.Add(new RegexUseCase("Random Sentence 2", "Classic Denzel"));
             regexcases.Add(new RegexUseCase("Lorem Ipsum", "Lorem Ipsum dolor sit amet, consectetur adipiscing elit."));
-            Assert.IsTrue(VerifyMatches("example2.html", "Example 2 - ain pattern", RefPattern, UserPattern, regexcases, hints,sol));
+            Assert.IsTrue(VerifyMatches("example2.html", "Example 2 - ain pattern", RefPattern, UserPattern, regexcases, hints,"sol_example2.txt"));
         }
 
 
