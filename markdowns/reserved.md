@@ -44,7 +44,7 @@ These special characters are called metacharacters.
 | `\W` | Just the opposite of the previous metacharacter. |
 | `\d` | Any digit, 0 to 9. |
 | `\D` | Just the opposite of the previous metacharacter. |
-| `\b` | Word boundaries. It's an anchor used to find the start or the end of a word (defined as any number of consecutie \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
+| `\b` | Word boundaries. It's an anchor used to find the start or the end of a word (defined as any number of consecutive \w characters). `\bat` will match " **at**tack " and "**at**lantis" but not "bat" because the word doesn't start with `at`. |
 | `\B` | Just the opposite of the previous metacharacter. |
 | `\t` | Tabulation. |
 | `\r` | Carriage return. |

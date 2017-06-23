@@ -2,7 +2,7 @@
 A regular expression (or the acronym "regex") is a pattern that allows for complex text searches.
 
 
-Imagine you need to search for email addresses in a given text. An email address has a complex structure: it has an account part, the @ sign and the domain name part, and each part has it's own restrictions. 
+Imagine you need to search for email addresses in a given text. An email address has a complex structure: it has an account part, the @ sign and the domain name part, and each part has its own restrictions. 
 ![Email structure](/images/email.png)
 
 This is a hard task to do if you try to program it as usual, with loops, simple text searches and conditionals.
