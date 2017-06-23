@@ -180,7 +180,7 @@ namespace RegexCourse
         public static string Pattern_MatchVowels=@""[aeiouAEIOU]"";
     }
 }";
-            File.WriteAllText (Path.Combine(ReportPath,"sol_ex1.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex1.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
 		 
             string RefPattern = @"[aeiouAEIOU]";
 			string UserPattern = Exercise1.Pattern_MatchVowels;
@@ -216,7 +216,7 @@ namespace RegexCourse
         public static string Pattern_Exercise2=@""\b2[01]\d\d\b"";
     }
 }";
-            File.WriteAllText (Path.Combine(ReportPath,"sol_ex2.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex2.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string RefPattern = @"\b2[0-1][0-9][0-9]\b";
             string UserPattern = Exercise2.Pattern_Exercise2;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -244,7 +244,7 @@ namespace RegexCourse
         public static string Pattern_Exercise3=@""[A-Za-z-[AEIOUaeiou]][aeiou][ns]"";
     }
 }";
-            File.WriteAllText (Path.Combine(ReportPath,"sol_ex3.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex3.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string RefPattern = @"[a-zA-Z-[aeiouAEIOU]][aeiou][ns]";
             string UserPattern = Exercise3.Pattern_Exercise3;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -269,7 +269,7 @@ namespace RegexCourse
         public static string Pattern_Exercise4=@""<\/?[a-zA-Z0-9=\s\-""""_:]+?>"";
     }
 }";
-            File.WriteAllText (Path.Combine(ReportPath,"sol_ex4.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex4.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string RefPattern = @"<\/?[a-zA-Z0-9=\s""\-_:]+?>";
             string UserPattern = Exercise4.Pattern_Exercise4;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -345,7 +345,7 @@ string xml2 =
         public static string Pattern_Exercise5=@""[\w\.+_\-=\(\)]+\.([jJ][pP][eE]?[gG]|[gG][Ii][Ff]|[pP][nN][Gg]|[bB][mM][Pp])"";
     }
 }";
-            File.WriteAllText (Path.Combine(ReportPath,"sol_ex5.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex5.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string RefPattern = @"[a-zA-Z0-9\.\-+_=\(\)]+\.([jJ][pP][eE]?[gG]|[pP][nN][gG]|[bB][mM][pP]|[gG][iI][fF])";
             string UserPattern = Exercise5.Pattern_Exercise5;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -408,7 +408,7 @@ string sol=
 		
     }
 }";
-            File.WriteAllText (Path.Combine(ReportPath,"sol_ex6.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+            File.WriteAllText (Path.Combine(ReportPath,"sol_ex6.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string DrivePattern = @"(?<Drive>\b[a-zA-Z])";
             string DirPattern = @"[a-zA-Z0-9\-+_=\(\)]+";
             string DirsPattern = @"(?<Path>(?:" + DirPattern + @"\\)*)";
@@ -437,7 +437,7 @@ string sol=
         {
             string hints = "On this button you'll get hints for solving each exercise.";
 			string sol = @"You'll see the solutions for each exercise here";
-			File.WriteAllText (Path.Combine(ReportPath,"sol_example1.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+			File.WriteAllText (Path.Combine(ReportPath,"sol_example1.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string RefPattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b";
             string UserPattern = Example1.Pattern_Email;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
@@ -460,7 +460,7 @@ string sol=
         {
             string hints = "On this button you'll get hints for solving each exercise.";
 			string sol = @"You'll see the solutions for each exercise here";
-			File.WriteAllText (Path.Combine(ReportPath,"sol_example2.txt"),"<pre>"+WebUtility.HtmlEncode(sol)+"</pre");
+			File.WriteAllText (Path.Combine(ReportPath,"sol_example2.txt"),"<pre><code>"+WebUtility.HtmlEncode(sol)+"</pre");
             string RefPattern = @"ain";
             string UserPattern = Example2.Pattern_Example2;
             List<RegexUseCase> regexcases = new List<RegexUseCase>();
