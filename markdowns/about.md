@@ -15,7 +15,7 @@ Students will learn the most important features of Regular Expressions:
 * Reserved characters in Regex
 * Repetitions
 * Alternations 
-* capturing groups.
+* Capturing groups.
 ## Why should I learn?
 Regular Expressions are widely used in:
 -  General text searches: Find specific text, based on complex patterns.
