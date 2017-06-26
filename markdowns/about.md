@@ -1,18 +1,21 @@
 # About Regular Expressions Basics
 This course is designed as a fast, introductory course to Regular Expressions.
-Regular Expressions (aka Regex) are powerful tools to make very complex text searches with just a few lines of code.
+Regular Expressions (aka Regex) are powerful tools used to perform very complex text searches with just a few lines of code.
 ## Previous Knowledge:
 Basic programming knowledge: Strings, Variables, Arrays, Loops, Functions.
 Regex searches can be used in almost any programming language.
-C# is used in this Course, but only to store strings.
-You don't need any prior C# knowledge to complete the Course.
+C# is used in this course, but only to store strings.
+You don't need any prior C# knowledge to complete the course.
 ## Difficulty Level: 
 Intermediate.
 ## Estimated Time:
 60 minutes.
 ## What will I learn?
 Students will learn the most important features of Regular Expressions:
- Reserved characters in Regex, repetitions, alternations and capturing groups.
+* Reserved characters in Regex
+* Repetitions
+* Alternations 
+* capturing groups.
 ## Why should I learn?
 Regular Expressions are widely used in:
 -  General text searches: Find specific text, based on complex patterns.

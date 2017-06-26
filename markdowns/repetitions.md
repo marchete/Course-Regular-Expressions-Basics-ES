@@ -4,7 +4,7 @@ Repetitions simplify using the same pattern several consecutive times. They also
 
 ### `{` `}` Ranges
 
-You can use these syntaxes for defined ranges:
+You can use the following syntax for defined ranges:
 
 | Pattern | Description |
 | ------ | ------ |
@@ -17,7 +17,7 @@ So `a{6}` is the same as `aaaaaa`, and `[a-z]{1,3}` will match any text that has
 
 ### Other Ranges
 
-You can use these syntaxes for other types of ranges:
+You can use the following syntax for other types of ranges:
 
 | Pattern | Description |
 | ------ | ------ |
@@ -25,11 +25,11 @@ You can use these syntaxes for other types of ranges:
 | `+` | Repeat the previous symbol `1` or more times |
 | `?` | Repeat the previous symbol `0` or `1` times |
 
->**Note:** `*` is the same as `{0,}`, `+` is the same as `{1,}` and `?` is the same as `{0,1}`
+>**Note:** `*` is the same as `{0,}`, `+` is the same as `{1,}`, and `?` is the same as `{0,1}`
 
 A common use for `?` is to allow both singular and plural words: `cats?` will match either `cat` or `cats`. 
 
-Repetitions are greedy on searches, they try to get the largest match possible. Sometimes that's undesired. You can force a lazy search by adding `?` after `*` or `+`.
+Repetitions are greedy on searches; they try to get the largest match possible. Sometimes that's undesired, so you can force a lazy search by adding `?` after `*` or `+`.
 The `?` instructs the regex engine to make a lazy search, which gives the smallest match possible.
 
 Greedy Search: `a.*a` will find ![Greedy Search](/images/greedy.png)
@@ -38,6 +38,6 @@ Lazy Search: `a.*?a` will find ![Lazy Search](/images/lazy.png)
 @[Exercise 4 - Simplified XML Tags ]({"stubs": ["Exercises/Exercise4.cs"],"command": "RegexCourse.Validator.VerifyExercise4"})
 
 >**Note:** Regex is not recommended for parsing XML or HTML. See: http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags 
-But for simple things it can find what you need.
+However it can find what you need for simpler things.
 
-In the next lesson you'll learn about Alternations.
+In the next lesson, you'll learn about Alternations.
