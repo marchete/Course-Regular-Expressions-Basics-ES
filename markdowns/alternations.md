@@ -1,6 +1,6 @@
 # Alternations `(|)`
 
-With `[` `]` you have the OR operator at a character level, now with alternation you have the OR operator at the pattern level:
+With `[` `]`, you have the OR operator at a character level. With alternation, you have the OR operator at the pattern level:
 
 `(pattern1|pattern2|pattern3)` will match either `pattern1` OR `pattern2` OR `pattern3`.
 

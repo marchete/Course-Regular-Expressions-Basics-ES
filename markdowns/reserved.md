@@ -1,7 +1,7 @@
 # Characters And Metacharacters
 
 ### Literal Characters: Letters, digits and unicode
-All letters, digits and (most) unicode characters in a regex pattern are literal, so the regex engine will search for exactly that pattern, without any other processing.
+All letters, digits and most unicode characters in a regex pattern are literal, so the regex engine will search for *exactly* that pattern, without any other processing.
 
 So if you search for `at`, your pattern will match these strings: "c**at**", "b**at**", "You were l**at**e, you need to be **at** home **at** 10".
 
@@ -11,7 +11,7 @@ So if you search for `at`, your pattern will match these strings: "c**at**", "b*
 
 Almost any other characters (both ASCII and Unicode) will be treated as literals too.
 
-**But** there is a list of reserved, special, characters.
+**But** there is a list of reserved, special characters called *metacharacters*.
 These are the most important (we will see all of them in more detail in the subsequent lessons):
 
 | Chars | Description |
@@ -30,10 +30,9 @@ These are the most important (we will see all of them in more detail in the subs
 | `-` | Range definition. Used to define a range of consecutive characters, like A-Z |
 | `\` | Escape character for all reserved characters, so \\? will search for a literal ?. It's also used for other special search patterns (see below).  |
 
-These special characters are called metacharacters.
 >**Anchors:** `^` and `$` are also called anchors. Anchors match zero characters.
 
->**Note:** In other search engines, the `*` is a wildcard that matches everything. But in regex, the wildcard is created with the union of two metacharacters: `.*`, which means "any single character zero or more times". Similarly, in other search engines `?` is equivalent to `.` in regex (any single character, once).
+>**Note:** In other search engines, the `*` is a wildcard that matches everything. However in regex, the wildcard is created with the union of two metacharacters: `.*`, which means "any single character zero or more times". Similarly, in other search engines `?` is equivalent to `.` in regex (any single character, once).
 
 
 ### Other metacharacters
@@ -56,7 +55,7 @@ These special characters are called metacharacters.
 
 ### Backslash
 
-Using backslash outside of the previously defined metacharacters will escape the following character. The regex engine will then consider this character as a simple literal. This means, according to the table above, `*` is a quantifier, but if you need to match the character `*` in a string, `\*` means "the character `*`".
+Using backslash, outside of the previously defined metacharacters, will escape the following character. The regex engine will then consider this character as a simple literal. According to the table above, `*` is a quantifier, but if you need to use the character `*` in a string, `\*` means "the character `*`".
 
 Furthermore, the `\` can escape itself if you need to match a backslash character. You can use `\\` to match backslash.
 
@@ -71,4 +70,4 @@ Check your language to know how to apply them.
 | s | Single line, `.` will match `\n` so the whole text is considered as a single line.  |
 | m | Multiline, `^` and `$` will match on each line, and not only at start and end of string.  |
 
-In the next lesson we will learn about Character Sets.
+In the next lesson, we will learn about Character Sets.
