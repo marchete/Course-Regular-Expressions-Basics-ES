@@ -12,6 +12,7 @@ So if you search for `at`, your pattern will match these strings: "c**at**", "b*
 Almost any other characters (both ASCII and Unicode) will be treated as literals too.
 
 **But** there is a list of reserved, special characters called *metacharacters*.
+
 ::: Click here to show the table of reserved characters
 These are the most important (we will see all of them in more detail in the subsequent lessons):
 
@@ -37,6 +38,7 @@ These are the most important (we will see all of them in more detail in the subs
 :::
 
 ### Other metacharacters
+
 ::: Click here to show the table of additional metacharacters
 | Pattern | Description |
 | ------ | ------ |
@@ -64,6 +66,7 @@ Furthermore, the `\` can escape itself if you need to match a backslash characte
 ### Search flags and modifiers
 Most regex engines have some flags to change the search behaviour.
 Check your language to know how to apply them.
+
 ::: Search flags
 | Modifier | Description |
 | --- | ------ |
