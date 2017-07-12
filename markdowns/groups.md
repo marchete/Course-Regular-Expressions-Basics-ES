@@ -9,6 +9,7 @@ Also, another main use of groups is for processing parts of a match like extract
 ### `(` `)` Unnamed Groups
 With `pattern1(pattern2)pattern3`, you'll capture the results of pattern2 for later use but not the parts matched by `pattern1` or `pattern3`.
 This is useful when you want to extract only a portion of the search. Imagine that you are reading some text files that are formatted as forms. They could have data like this:
+
 ```
 Name:"John" Surname:"Doe" Email:"john@example.com"
 ```
