@@ -69,7 +69,7 @@ Furthermore, the `\` can escape itself if you need to match a backslash characte
 Most regex engines have some flags to change the search behaviour.
 Check your language to know how to apply them.
 
-::: Search flags
+::: Click here to show search flags
 | Modifier | Description |
 | --- | ------ |
 | i | Case insensitive search |
