@@ -12,6 +12,7 @@ So if you search for `at`, your pattern will match these strings: "c**at**", "b*
 Almost any other characters (both ASCII and Unicode) will be treated as literals too.
 
 **But** there is a list of reserved, special characters called *metacharacters*.
+::: Click here to show the table of reserved characters
 These are the most important (we will see all of them in more detail in the subsequent lessons):
 
 | Chars | Description |
@@ -33,10 +34,10 @@ These are the most important (we will see all of them in more detail in the subs
 >**Anchors:** `^` and `$` are also called anchors. Anchors match zero characters.
 
 >**Note:** In other search engines, the `*` is a wildcard that matches everything. However in regex, the wildcard is created with the union of two metacharacters: `.*`, which means "any single character zero or more times". Similarly, in other search engines `?` is equivalent to `.` in regex (any single character, once).
-
+:::
 
 ### Other metacharacters
-
+::: Click here to show the table of additional metacharacters
 | Pattern | Description |
 | ------ | ------ |
 | `\w` | Any letter (a to z, both lowercase and uppercase), digit (0 to 9), or the underscore char `_`. |
@@ -52,6 +53,7 @@ These are the most important (we will see all of them in more detail in the subs
 | `\S` | Just the opposite of the previous metacharacter. |
 
 >**Note:** There are many other patterns using `\`, but these are the most important.
+:::
 
 ### Backslash
 
@@ -62,12 +64,13 @@ Furthermore, the `\` can escape itself if you need to match a backslash characte
 ### Search flags and modifiers
 Most regex engines have some flags to change the search behaviour.
 Check your language to know how to apply them.
-
+::: Search flags
 | Modifier | Description |
 | --- | ------ |
 | i | Case insensitive search |
 | g | Global search. Some regex engines stop on the first match, the `g` flag forces the search to return all possible matches. |
 | s | Single line, `.` will match `\n` so the whole text is considered as a single line.  |
 | m | Multiline, `^` and `$` will match on each line, and not only at start and end of string.  |
+:::
 
 In the next lesson, we will learn about Character Sets.
