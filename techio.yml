@@ -1,21 +1,21 @@
-title : Regular Expressions Basics
+title : Introducción a Expresiones Regulares
 cover: /images/cover.png
 plan:
-  - title: "About Regular Expressions Playground"
+  - title: "Sobre este Curso"
     statement: markdowns/about.md
-  - title: Introduction
+  - title: Introducción
     statement: markdowns/intro.md
-  - title: "Reserved Characters"
+  - title: "Caracteres Reservados"
     statement: markdowns/reserved.md
   - title: "Character Sets"
     statement: markdowns/sets.md
-  - title: Repetitions
+  - title: Repeticiones
     statement: markdowns/repetitions.md
   - title: Alternations
     statement: markdowns/alternations.md
-  - title: "Groups & Capturing Groups"
+  - title: "Grupos y Grupos de Capturas"
     statement: markdowns/groups.md
-  - title: "Next Steps"
+  - title: "Conclusiones"
     statement: markdowns/more.md
 projects:
     regexcourse:
